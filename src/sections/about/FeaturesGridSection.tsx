@@ -90,7 +90,14 @@ const FeatureRow = ({
               backfaceVisibility: 'hidden',
             }}
             className='absolute inset-0 z-50 flex items-center justify-center'>
-            <p className='text-h6 text-light max-w-2xl rotate-x-180'>{text}</p>
+            <motion.p
+              animate={{
+                opacity: isCardActive ? 1 : 0,
+              }}
+              transition={transition}
+              className='text-h6 text-light max-w-2xl rotate-x-180'>
+              {text}
+            </motion.p>
           </motion.div>
         </motion.div>
       </div>
