@@ -21,11 +21,9 @@ const FeatureRow = ({
   isMobile: boolean;
   rowRef: (el: HTMLDivElement | null) => void;
 }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   // Desktop: flip on hover, Mobile: flip on scroll activation
-  const isFlipped = isMobile ? isActive : isHovered;
-  const isCardActive = isMobile ? isActive : isHovered;
+  const isFlipped = isActive;
+  const isCardActive = isActive;
 
   // Conditional transition: delay only on exit (flipping back to 0)
   // Enter (flip to 180): immediate (delay = 0)
@@ -38,10 +36,7 @@ const FeatureRow = ({
 
   return (
     <div ref={rowRef} className='relative z-0 w-full' data-row-index={index}>
-      <div
-        className='relative w-full overflow-hidden'
-        onMouseEnter={() => !isMobile && setIsHovered(true)}
-        onMouseLeave={() => !isMobile && setIsHovered(false)}>
+      <div className='relative w-full overflow-hidden'>
         <motion.div
           className='border-dark/20 relative grid size-full grid-cols-1 grid-rows-1 content-center items-center justify-center border-b py-10 text-center'
           animate={{
@@ -113,8 +108,6 @@ const FeaturesGridSection = ({ items }: IFeaturesGrid) => {
   const isMobile = screenWidth < TailwindBreakpoints.md;
 
   useEffect(() => {
-    if (!isMobile) return;
-
     const updateActiveRow = () => {
       const viewportCenter = window.innerHeight / 2;
       let closestIndex: number | null = null;

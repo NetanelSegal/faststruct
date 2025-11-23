@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { motion, useInView, useScroll, useTransform } from 'motion/react';
-import { useRef, useState } from 'react';
+import { RefObject, useRef, useState } from 'react';
 import { ITeam } from '@/types/about';
 import { Section } from '@/components/Section';
 import AnimatedHeading from '@/components/text-animation/AnimatedHeading';
@@ -40,7 +40,7 @@ interface TeamMemberCardProps {
   bio: string;
   imageUrl: string;
   index: number;
-  sectionRef: React.RefObject<HTMLElement | null>;
+  sectionRef: RefObject<HTMLElement | null>;
   isMobile: boolean;
 }
 
@@ -53,14 +53,8 @@ const TeamMemberCard = ({
   sectionRef,
   isMobile,
 }: TeamMemberCardProps) => {
-  const cardRef = useRef<HTMLDivElement>(null);
   const [imageError, setImageError] = useState(false);
   const [isImageLoading, setIsImageLoading] = useState(true);
-  const isInView = useInView(cardRef, {
-    once: true,
-    amount: 0.2,
-    margin: '0px 0px -100px 0px',
-  });
 
   // Determine which image to use
   const displayImage = imageError ? getPlaceholderImage(name) : imageUrl;
@@ -72,7 +66,7 @@ const TeamMemberCard = ({
   // Parallax effect: aggressive, index-based velocity
   // Higher index = dramatically more parallax movement (creates deep chasm effect)
   const { scrollYProgress } = useScroll({
-    target: sectionRef as React.RefObject<HTMLElement>,
+    target: sectionRef as RefObject<HTMLElement>,
     offset: ['start end', 'end start'],
   });
 
@@ -95,9 +89,8 @@ const TeamMemberCard = ({
 
   return (
     <motion.div
-      ref={cardRef}
       initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={{
         duration: 0.6,
         delay: index * 0.1,
