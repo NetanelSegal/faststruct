@@ -28,10 +28,10 @@ const HamburgerButton = ({ isOpen, toggleMenu }: IHamburgerButtonProps) => {
         transition={{ duration: 0.3 }}
         className='flex w-full flex-col justify-start'>
         <div className='flex aspect-square w-full items-center justify-center'>
-          <i className='fas fa-bars transition-all group-hover:scale-110 group-active:scale-90'></i>
+          <i className='fas fa-bars size-fit transition-all group-hover:scale-110 group-active:scale-90'></i>
         </div>
         <div className='flex aspect-square w-full items-center justify-center'>
-          <i className='fas fa-times transition-all group-hover:scale-110 group-active:scale-90'></i>
+          <i className='fas fa-times size-fit transition-all group-hover:scale-110 group-active:scale-90'></i>
         </div>
       </motion.div>
     </button>

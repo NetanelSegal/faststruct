@@ -7,12 +7,10 @@ import { useToggle } from '@/hooks/useToggle';
 import DesktopNavbar from './DesktopNavbar';
 import MobileNavbar from './MobileNavbar';
 import { AnimatePresence, motion, Variants } from 'motion/react';
-import Link from 'next/link';
 import FastructLogo from '../FastructLogo';
 import HamburgerButton from './HamburgerButton';
 import { useMounted } from '@/hooks/useMounted';
-import { usePageTransition } from '@/contexts/PageTransitionContext';
-import { usePathname } from 'next/navigation';
+import NavLink from './NavLink';
 
 const NAVBAR_SWAP_BREAKPOINT = TailwindBreakpoints.lg;
 
@@ -33,8 +31,6 @@ export default function Navbar() {
   const menuRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLElement>(null);
   const hasMounted = useMounted();
-  const pathname = usePathname();
-  const { startTransition } = usePageTransition();
 
   const closeMobileMenu = useCallback(() => {
     if (isMobileMenuOpen) {
@@ -95,18 +91,12 @@ export default function Navbar() {
       <div className='bg-dark absolute z-10 h-full w-full'></div>
 
       <div className='container-padding relative z-20 flex items-center justify-between border-b py-4'>
-        <Link
-          href='/'
-          onClick={() => {
-            if (pathname !== '/') {
-              startTransition();
-            }
-          }}>
+        <NavLink href='/'>
           <FastructLogo
             color='light'
             className='h-[25px] md:h-[35px] lg:h-[40px]'
           />
-        </Link>
+        </NavLink>
         {screenWidth > NAVBAR_SWAP_BREAKPOINT ? (
           <DesktopNavbar />
         ) : (

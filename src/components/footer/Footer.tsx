@@ -16,7 +16,7 @@ const Footer = ({ contactInfo, contactSocial }: FooterProps) => {
   const pathname = usePathname();
   const isContactPage = pathname === '/contact';
   return (
-    <footer className='bg-dark section-padding-top flex flex-col gap-6 pb-10 text-white'>
+    <footer className='bg-dark section-padding-top relative z-0 flex flex-col gap-6 pb-10 text-white'>
       {!isContactPage && <LetsBuildTogetherCTA />}
       <div className='container-padding section-padding-top'>
         <div className='flex flex-col items-start justify-between gap-8 md:flex-row md:justify-between'>

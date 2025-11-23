@@ -2,9 +2,9 @@
 
 import { HTMLMotionProps, motion, Variants } from 'motion/react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import { useScreenWidth } from '@/hooks/useScreenWidth';
+import NavLink from '@/components/navigation/NavLink';
 
 interface IModuleCardProps {
   index: number;
@@ -56,7 +56,7 @@ export const ModuleCard = ({
     <motion.div
       variants={variants}
       className='w-full shrink grow overflow-hidden rounded-xl shadow-md md:max-w-1/2 md:basis-1/3'>
-      <Link href={`/module/${slug}`} className='block'>
+      <NavLink href={`/module/${slug}`} className='block' style={false}>
         <motion.div
           initial='initial'
           transition={{ duration: CARD_ANIMATION_DURATION }}
@@ -76,7 +76,7 @@ export const ModuleCard = ({
           <Specs specs={specs} />
           <ModulesTitle title={title} variants={titleVariants} />
         </motion.div>
-      </Link>
+      </NavLink>
     </motion.div>
   );
 };

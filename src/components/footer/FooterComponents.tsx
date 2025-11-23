@@ -1,8 +1,7 @@
-import Link from 'next/link';
 import AnimatedHeading from '../text-animation/AnimatedHeading';
-import { Button } from '../Button';
 import { ENABLED_ROUTES } from '@/lib/routes';
 import { IContactInfo, IContactSocial } from '@/types/contact';
+import NavLink from '../navigation/NavLink';
 
 const LetsBuildTogetherCTA = () => {
   return (
@@ -15,11 +14,9 @@ const LetsBuildTogetherCTA = () => {
         Have a project in mind? Let&apos;s talk about how we can bring it to
         life.
       </p>
-      <Link href='/contact'>
-        <Button variant='primary' size='lg' hoverTransition='lift'>
-          Get in Touch
-        </Button>
-      </Link>
+      <NavLink button={true} href='/contact'>
+        Get in Touch
+      </NavLink>
     </div>
   );
 };
@@ -41,11 +38,9 @@ const FooterLinksAndContact = ({
         <ul className='mt-2 space-y-2 text-sm'>
           {footerLinks.map((route) => (
             <li key={route.href}>
-              <Link
-                href={route.href}
-                className='hover:text-accent transition-colors'>
+              <NavLink href={route.href} style={false}>
                 {route.title}
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>

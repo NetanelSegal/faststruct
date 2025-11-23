@@ -1,5 +1,4 @@
-import Link from 'next/link';
-import { Button } from '@/components/Button';
+import NavLink from '@/components/navigation/NavLink';
 
 export default function NotFound() {
   return (
@@ -126,11 +125,9 @@ export default function NotFound() {
         </p>
 
         {/* CTA Button */}
-        <Link href='/'>
-          <Button variant='primary' size='lg' hoverTransition='lift'>
-            Back to Home
-          </Button>
-        </Link>
+        <NavLink href='/' button={true}>
+          Back to Home
+        </NavLink>
       </div>
     </div>
   );
