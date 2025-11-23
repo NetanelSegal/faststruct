@@ -7,6 +7,7 @@ import {
   useTransform,
   useMotionTemplate,
   MotionValue,
+  useMotionValueEvent,
 } from 'motion/react';
 import { useRef } from 'react';
 import { IStackedImage, IStackedImages } from '@/types/product';
@@ -73,14 +74,14 @@ const StackedImage = ({
   const scale = useTransform(
     imageProgress,
     [-1, 0, 1, 2, 3],
-    [0.5, 1, 0.85, 0.7, 0.6]
+    [0.8, 1, 0.85, 0.7, 0.6]
   );
 
   // Opacity:
   // - Past (-0.5): Fade out quickly as it goes up
   // - Active (0): 1
   // - Future (1): 0.4 (visible in stack but dim)
-  const opacity = useTransform(imageProgress, [-1, 0, 1], [0, 1, 1]);
+  const opacity = useTransform(imageProgress, [-0.5, 0, 1], [0, 1, 1]);
 
   // Y Position:
   // - Past (-1): Move UP (-400px) -> This fixes the direction!
@@ -90,7 +91,7 @@ const StackedImage = ({
   const y = useTransform(
     imageProgress,
     [-1, 0, 1, 2, 3],
-    [-300, 0, 50, 150, 300]
+    [-500, 0, 50, 150, 300]
   );
 
   // Z-Index (Crucial for stacking):
