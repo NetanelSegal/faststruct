@@ -7,7 +7,9 @@ import Script from 'next/script';
 import WebsiteLoader from '@/components/website-loader/WebsiteLoader';
 import { ReactLenis } from 'lenis/react';
 import { SiteReadyProvider } from '@/contexts/SiteReadyProvider';
+import { PageTransitionProvider } from '@/contexts/PageTransitionContext';
 import { getContent } from '@/lib/content';
+import PageTransition from '@/components/page-transition/PageTransition';
 
 const fontPoppins = Poppins({
   subsets: ['latin'],
@@ -41,23 +43,27 @@ export default async function RootLayout({
           crossOrigin='anonymous'
         />
         <SiteReadyProvider>
-          <ReactLenis
-            root
-            options={{
-              lerp: 0.08,
-              smoothWheel: true,
-              touchMultiplier: 2,
-              wheelMultiplier: 1,
-            }}>
-            <WebsiteLoader>
-              <Navbar />
-              <main className='relative z-0'>{children}</main>
-              <Footer
-                contactInfo={contactContent.info}
-                contactSocial={contactContent.social}
-              />
-            </WebsiteLoader>
-          </ReactLenis>
+          <PageTransitionProvider>
+            <ReactLenis
+              root
+              options={{
+                lerp: 0.08,
+                smoothWheel: true,
+                touchMultiplier: 2,
+                wheelMultiplier: 1,
+              }}>
+              <WebsiteLoader>
+                <Navbar />
+                <PageTransition>
+                  <main className='relative z-0'>{children}</main>
+                </PageTransition>
+                <Footer
+                  contactInfo={contactContent.info}
+                  contactSocial={contactContent.social}
+                />
+              </WebsiteLoader>
+            </ReactLenis>
+          </PageTransitionProvider>
         </SiteReadyProvider>
       </body>
     </html>

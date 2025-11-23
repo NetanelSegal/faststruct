@@ -10,6 +10,7 @@ import FAQSection from '@/sections/home/FAQSection';
 import ExperienceSection from '@/sections/home/ExperienceSection';
 import { getContent, getModules } from '@/lib/content';
 import type { Metadata } from 'next';
+import Page from '@/components/Page';
 
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getContent('home', 'en');
@@ -24,7 +25,7 @@ const HomePage = async () => {
   const modulesData = await getModules();
 
   return (
-    <div className={`bg-dark text-cream`}>
+    <Page className='bg-dark text-cream'>
       {/* Hero Section */}
       <HeroSection {...content.heroSection} />
 
@@ -54,7 +55,7 @@ const HomePage = async () => {
 
       {/* FAQ Section */}
       <FAQSection {...content.faq} />
-    </div>
+    </Page>
   );
 };
 

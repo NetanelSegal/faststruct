@@ -6,6 +6,7 @@ import SpecificationsSection from '@/sections/product/SpecificationsSection';
 import ProductDescriptionSection from '@/sections/product/ProductDescriptionSection';
 import StackedImagesSection from '@/sections/product/StackedImagesSection';
 import ExploreHomesSection from '@/sections/home/ExploreHomesSection';
+import Page from '@/components/Page';
 
 interface ModulePageProps {
   params: Promise<{ slug: string }>;
@@ -89,7 +90,7 @@ const ModulePage = async ({ params }: ModulePageProps) => {
   const otherModules = modulesList.filter((m) => m.slug !== slug);
 
   return (
-    <div className='bg-dark'>
+    <Page className='bg-dark'>
       <HeroProductSection {...heroData} />
       <SpecificationsSection {...specificationsData} />
       <StackedImagesSection {...stackedImagesData} />
@@ -98,7 +99,7 @@ const ModulePage = async ({ params }: ModulePageProps) => {
         featuredModules={otherModules}
         exploreContent={exploreData}
       />
-    </div>
+    </Page>
   );
 };
 

@@ -6,6 +6,8 @@ import { Button } from '../Button';
 import { ENABLED_ROUTES } from '@/lib/routes';
 import { RefObject } from 'react';
 import { motion, Variants } from 'motion/react';
+import { usePageTransition } from '@/contexts/PageTransitionContext';
+import { usePathname } from 'next/navigation';
 
 interface IMobileNavbarProps {
   menuRef: RefObject<HTMLDivElement | null>;
@@ -24,6 +26,9 @@ const variants: Variants = {
 };
 
 const MobileNavbar = ({ menuRef, onNavigate }: IMobileNavbarProps) => {
+  const pathname = usePathname();
+  const { startTransition } = usePageTransition();
+
   return (
     <motion.div
       initial='closed'
@@ -37,13 +42,26 @@ const MobileNavbar = ({ menuRef, onNavigate }: IMobileNavbarProps) => {
         className='flex flex-col items-center justify-center gap-2'>
         {ENABLED_ROUTES.map((route) =>
           route.isButton ? (
-            <Link href={route.href} key={route.href} onClick={onNavigate}>
+            <Link
+              scroll={false}
+              href={route.href}
+              key={route.href}
+              onClick={() => {
+                if (pathname !== route.href) {
+                  startTransition();
+                }
+                onNavigate?.();
+              }}>
               <Button variant='primary' size='lg' hoverTransition='lift'>
                 {route.title}
               </Button>
             </Link>
           ) : (
-            <NavLink key={route.href} href={route.href} onNavigate={onNavigate}>
+            <NavLink
+              scroll={false}
+              key={route.href}
+              href={route.href}
+              onNavigate={onNavigate}>
               {route.title}
             </NavLink>
           )

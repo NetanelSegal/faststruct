@@ -27,8 +27,8 @@ const ContactFormSection = ({ form, info }: ContactFormSectionProps) => {
     type: 'success' | 'error' | null;
     text: string;
   }>({ type: null, text: '' });
-  const formRef = useRef<HTMLFormElement>(null);
-  const isFormInView = useInView(formRef, { once: true, amount: 0.2 });
+  const sectionRef = useRef<HTMLFormElement>(null);
+  const isFormInView = useInView(sectionRef, { once: true });
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -64,7 +64,11 @@ const ContactFormSection = ({ form, info }: ContactFormSectionProps) => {
   };
 
   return (
-    <Section bgColor='dark' textColor='light' className='py-32'>
+    <Section
+      ref={sectionRef}
+      bgColor='dark'
+      textColor='light'
+      className='py-32'>
       <div className='container mx-auto'>
         <div className='grid gap-12 md:grid-cols-2 md:gap-16'>
           {/* Left: Contact Information */}
@@ -135,7 +139,6 @@ const ContactFormSection = ({ form, info }: ContactFormSectionProps) => {
 
           {/* Right: Contact Form */}
           <motion.form
-            ref={formRef}
             onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 30 }}
             animate={
