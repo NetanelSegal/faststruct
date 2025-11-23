@@ -24,7 +24,7 @@ const FeatureCarousel = ({ features }: FeatureCarouselProps) => {
     <section
       style={{ height: `${features.length * 100}vh` }}
       ref={sectionRef}
-      className={`relative w-full`}>
+      className={`relative w-full overflow-x-hidden`}>
       {/* Sticky container overlays on top during scroll */}
       <div className='sticky top-0 right-0 left-0 h-screen w-screen overflow-hidden'>
         {features.map((feature, index) => (
@@ -33,7 +33,6 @@ const FeatureCarousel = ({ features }: FeatureCarouselProps) => {
             feature={feature}
             index={index}
             progress={slideIndex}
-            // featuresCount={features.length}
           />
         ))}
       </div>

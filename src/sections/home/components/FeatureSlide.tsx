@@ -14,17 +14,9 @@ interface FeatureSlideProps {
   feature: IFeatureItem;
   index: number;
   progress: MotionValue<number>;
-  // featuresCount: number;
 }
 
-// const SLIDES_GAP = 5;
-
-const FeatureSlide = ({
-  feature,
-  index,
-  progress,
-  // featuresCount,
-}: FeatureSlideProps) => {
+const FeatureSlide = ({ feature, index, progress }: FeatureSlideProps) => {
   const { iconClass, title, text, imageUrl } = feature;
   const [runTextAnimation, setRunTextAnimation] = useState(false);
 
