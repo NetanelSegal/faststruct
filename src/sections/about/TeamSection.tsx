@@ -6,8 +6,7 @@ import { RefObject, useRef, useState } from 'react';
 import { ITeam } from '@/types/about';
 import { Section } from '@/components/Section';
 import AnimatedHeading from '@/components/text-animation/AnimatedHeading';
-import { useScreenWidth } from '@/hooks/useScreenWidth';
-import { TailwindBreakpoints } from '@/lib/css-constants';
+import { useIsTablet } from '@/hooks/useIsTablet';
 
 /**
  * Generate initials from a name for placeholder display
@@ -146,8 +145,7 @@ const TeamMemberCard = ({
 
 const TeamSection = ({ title, members }: ITeam) => {
   const sectionRef = useRef<HTMLElement>(null);
-  const { screenWidth } = useScreenWidth();
-  const isMobile = screenWidth < TailwindBreakpoints.lg;
+  const isMobile = useIsTablet();
 
   // Calculate maximum displacement for the last item (highest index)
   // This creates a buffer zone to prevent overflow from parallax movement

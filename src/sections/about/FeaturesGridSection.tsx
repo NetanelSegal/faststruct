@@ -4,8 +4,7 @@ import Image from 'next/image';
 import { useRef, useState, useEffect } from 'react';
 import { motion, Transition } from 'motion/react';
 import { IFeaturesGrid, IFeatureItem } from '@/types/about';
-import { useScreenWidth } from '@/hooks/useScreenWidth';
-import { TailwindBreakpoints } from '@/lib/css-constants';
+import { useIsMobile } from '@/hooks/useIsMobile';
 
 const FeatureRow = ({
   title,
@@ -104,8 +103,7 @@ const FeaturesGridSection = ({ items }: IFeaturesGrid) => {
   const sectionRef = useRef<HTMLElement>(null);
   const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const { screenWidth } = useScreenWidth();
-  const isMobile = screenWidth < TailwindBreakpoints.md;
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const updateActiveRow = () => {
@@ -141,7 +139,7 @@ const FeaturesGridSection = ({ items }: IFeaturesGrid) => {
       window.removeEventListener('scroll', updateActiveRow);
       window.removeEventListener('resize', updateActiveRow);
     };
-  }, [screenWidth]);
+  }, [isMobile]);
 
   return (
     <section ref={sectionRef} className='bg-light text-dark py-0'>

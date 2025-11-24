@@ -1,4 +1,3 @@
-
 export interface ISpecs {
   areaSqft: number;
   bedrooms: number;
@@ -20,7 +19,4 @@ export interface IModule {
   mainImage: string;
   images: string[];
   sketchPlans: string[];
-  tags: string[];
-  highlights: string[];
-  cta: ICTA;
 }

@@ -25,18 +25,7 @@
     ],
     "sketchPlans": [
       "https://media.istockphoto.com/id/476190573/vector/architecture.jpg?s=612x612&w=0&k=20&c=ZhCh_zpDZxEYbZipufMpCepHD79Vlbs5GGO76dQfTlg="
-    ],
-    "tags": ["ADU", "Guest", "Compact"],
-    "highlights": [
-      "Energy-efficient windows and doors",
-      "Light Gauge Steel (LGS) structure",
-      "Fast on-site installation",
-      "Low-maintenance exterior finishes"
-    ],
-    "cta": {
-      "primaryLabel": "View Details",
-      "secondaryLabel": "Get Floor Plan"
-    }
+    ]
   },
   {
     "slug": "family-smart-unit",
@@ -64,18 +53,7 @@
     ],
     "sketchPlans": [
       "https://media.istockphoto.com/id/476190573/vector/architecture.jpg?s=612x612&w=0&k=20&c=ZhCh_zpDZxEYbZipufMpCepHD79Vlbs5GGO76dQfTlg="
-    ],
-    "tags": ["Family", "2BR", "Flexible"],
-    "highlights": [
-      "Open-plan living for family life",
-      "Optimized storage solutions",
-      "High-performance insulation",
-      "Future-ready smart home options"
-    ],
-    "cta": {
-      "primaryLabel": "View Details",
-      "secondaryLabel": "Request Brochure"
-    }
+    ]
   },
   {
     "slug": "live-and-work-hybrid",
@@ -103,18 +81,7 @@
     ],
     "sketchPlans": [
       "https://media.istockphoto.com/id/476190573/vector/architecture.jpg?s=612x612&w=0&k=20&c=ZhCh_zpDZxEYbZipufMpCepHD79Vlbs5GGO76dQfTlg="
-    ],
-    "tags": ["Studio", "Hybrid", "Workspace"],
-    "highlights": [
-      "Dedicated work/studio area",
-      "Acoustic considerations for focus",
-      "Separate guest/secondary bath",
-      "Flexible layout options"
-    ],
-    "cta": {
-      "primaryLabel": "See Interior Layout",
-      "secondaryLabel": "Get Floor Plan"
-    }
+    ]
   },
   {
     "slug": "executive-comfort",
@@ -142,18 +109,7 @@
     ],
     "sketchPlans": [
       "https://media.istockphoto.com/id/476190573/vector/architecture.jpg?s=612x612&w=0&k=20&c=ZhCh_zpDZxEYbZipufMpCepHD79Vlbs5GGO76dQfTlg="
-    ],
-    "tags": ["Luxury", "3BR", "Entertaining"],
-    "highlights": [
-      "Spacious open-plan living",
-      "Premium finishes and fixtures",
-      "Primary suite with ensuite",
-      "Indoor-outdoor living focus"
-    ],
-    "cta": {
-      "primaryLabel": "Discover Full Specs",
-      "secondaryLabel": "Schedule a Consultation"
-    }
+    ]
   },
   {
     "slug": "ultra-compact-retreat",
@@ -181,17 +137,6 @@
     ],
     "sketchPlans": [
       "https://media.istockphoto.com/id/476190573/vector/architecture.jpg?s=612x612&w=0&k=20&c=ZhCh_zpDZxEYbZipufMpCepHD79Vlbs5GGO76dQfTlg="
-    ],
-    "tags": ["Ultra-Compact", "1BR", "Minimalist"],
-    "highlights": [
-      "Maximized space efficiency",
-      "Affordable and practical",
-      "Perfect for small lots",
-      "Low maintenance design"
-    ],
-    "cta": {
-      "primaryLabel": "View Details",
-      "secondaryLabel": "Get Floor Plan"
-    }
+    ]
   }
 ]

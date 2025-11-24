@@ -5,8 +5,7 @@ import TypingEffect from '@/components/text-animation/TypingEffect';
 import { useRef } from 'react';
 import Parallax from '@/components/Parallax';
 import { UseScrollOptions } from 'motion/react';
-import { useScreenWidth } from '@/hooks/useScreenWidth';
-import { TailwindBreakpoints } from '@/lib/css-constants';
+import { useIsMobile } from '@/hooks/useIsMobile';
 import FadeInParagraph from '@/components/text-animation/FadeInParagraph';
 import { IHeroSection } from '@/types/home';
 
@@ -15,10 +14,10 @@ const HeroSection: React.FC<IHeroSection> = ({
   animatedWords,
   subtitle,
 }) => {
-  const { screenWidth } = useScreenWidth();
+  const isMobile = useIsMobile();
   const ref = useRef<HTMLDivElement>(null);
   const offset: UseScrollOptions['offset'] = [
-    screenWidth > TailwindBreakpoints.md ? 'center center' : '50% 30%',
+    !isMobile ? 'center center' : '50% 30%',
     'end start',
   ];
   const unitType = 'px';

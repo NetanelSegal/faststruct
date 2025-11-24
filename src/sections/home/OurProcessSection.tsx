@@ -11,9 +11,8 @@ import {
   useScroll,
   useTransform,
 } from 'motion/react';
-import { useScreenWidth } from '@/hooks/useScreenWidth';
+import { useIsMobile } from '@/hooks/useIsMobile';
 import { calculateDistance, getElementCenter } from '@/lib/utils';
-import { TailwindBreakpoints } from '@/lib/css-constants';
 import ProcessStepNumber from './components/ProcessStepNumber';
 import ProcessStepContent from './components/ProcessStepContent';
 import clsx from 'clsx';
@@ -21,8 +20,7 @@ import clsx from 'clsx';
 const RADIANS_RANGE = 2 * Math.PI;
 
 const OurProcessSection: React.FC<IProcess> = ({ title, steps }) => {
-  const { screenWidth } = useScreenWidth();
-  const isMobile = screenWidth < TailwindBreakpoints.md;
+  const isMobile = useIsMobile();
 
   const numberContainerRef = useRef<HTMLDivElement>(null);
   const stepsPlaceholderRef = useRef<HTMLDivElement>(null);
@@ -158,7 +156,7 @@ const OurProcessSection: React.FC<IProcess> = ({ title, steps }) => {
     };
 
     calculatePositions();
-  }, [steps, screenWidth, isMobile]);
+  }, [steps, isMobile]);
 
   return (
     <section

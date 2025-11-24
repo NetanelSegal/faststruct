@@ -3,7 +3,7 @@
 import { HTMLMotionProps, motion, Variants } from 'motion/react';
 import Image from 'next/image';
 
-import { useScreenWidth } from '@/hooks/useScreenWidth';
+import { useIsMobile } from '@/hooks/useIsMobile';
 import NavLink from '@/components/navigation/NavLink';
 
 interface IModuleCardProps {
@@ -25,9 +25,7 @@ export const ModuleCard = ({
   specs,
   variants,
 }: IModuleCardProps) => {
-  const { breakpoint } = useScreenWidth();
-  const isMobile =
-    breakpoint === 'xs' || breakpoint === 'sm' || breakpoint === 'md';
+  const isMobile = useIsMobile();
 
   const imageVariants: Variants = {
     initial: { scale: 1 },

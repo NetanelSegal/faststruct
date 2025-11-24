@@ -1,8 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { useScreenWidth } from '@/hooks/useScreenWidth';
-import { TailwindBreakpoints } from '@/lib/css-constants';
+import { useIsTablet } from '@/hooks/useIsTablet';
 import { useToggle } from '@/hooks/useToggle';
 import DesktopNavbar from './DesktopNavbar';
 import MobileNavbar from './MobileNavbar';
@@ -11,8 +10,6 @@ import FastructLogo from '../FastructLogo';
 import HamburgerButton from './HamburgerButton';
 import { useMounted } from '@/hooks/useMounted';
 import NavLink from './NavLink';
-
-const NAVBAR_SWAP_BREAKPOINT = TailwindBreakpoints.lg;
 
 const variants: Variants = {
   hidden: {
@@ -26,7 +23,7 @@ const variants: Variants = {
 export default function Navbar() {
   const [isMobileMenuOpen, toggleIsMobileMenuOpen] = useToggle(false);
   const [showNavbar, setShowNavbar] = useState(true);
-  const { screenWidth } = useScreenWidth();
+  const isTablet = useIsTablet();
   const previousScrollY = useRef(0);
   const menuRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLElement>(null);
@@ -39,7 +36,7 @@ export default function Navbar() {
   }, [isMobileMenuOpen, toggleIsMobileMenuOpen]);
 
   useEffect(() => {
-    if (screenWidth < NAVBAR_SWAP_BREAKPOINT) return;
+    if (isTablet) return;
 
     const handleScroll = () => {
       const directionDown = window.scrollY > previousScrollY.current;
@@ -52,11 +49,11 @@ export default function Navbar() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [screenWidth]);
+  }, [isTablet]);
 
   // Close mobile menu when clicking outside
   useEffect(() => {
-    if (!isMobileMenuOpen || screenWidth >= NAVBAR_SWAP_BREAKPOINT) return;
+    if (!isMobileMenuOpen || !isTablet) return;
 
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Node;
@@ -76,7 +73,7 @@ export default function Navbar() {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside, true);
     };
-  }, [isMobileMenuOpen, screenWidth, closeMobileMenu]);
+  }, [isMobileMenuOpen, isTablet, closeMobileMenu]);
 
   if (!hasMounted) return null;
 
@@ -97,7 +94,7 @@ export default function Navbar() {
             className='h-[25px] md:h-[35px] lg:h-[40px]'
           />
         </NavLink>
-        {screenWidth > NAVBAR_SWAP_BREAKPOINT ? (
+        {!isTablet ? (
           <DesktopNavbar />
         ) : (
           <HamburgerButton
@@ -106,7 +103,7 @@ export default function Navbar() {
           />
         )}
       </div>
-      {screenWidth < NAVBAR_SWAP_BREAKPOINT && (
+      {isTablet && (
         <AnimatePresence>
           {isMobileMenuOpen && (
             <MobileNavbar

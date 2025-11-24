@@ -2,6 +2,7 @@ import { isPageEnabled } from './page-config';
 
 export const ROUTES = [
   { href: '/', title: 'Home' },
+  { href: '/modules', title: 'Modules' },
   { href: '/about', title: 'About' },
   { href: '/technical', title: 'Technical' },
   {

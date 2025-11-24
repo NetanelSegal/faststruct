@@ -93,8 +93,8 @@ const ModulePage = async ({ params }: ModulePageProps) => {
     <Page className='bg-dark'>
       <HeroProductSection {...heroData} />
       <SpecificationsSection {...specificationsData} />
-      <StackedImagesSection {...stackedImagesData} />
       <ProductDescriptionSection {...descriptionData} />
+      <StackedImagesSection {...stackedImagesData} />
       <ExploreHomesSection
         featuredModules={otherModules}
         exploreContent={exploreData}

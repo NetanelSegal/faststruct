@@ -3,6 +3,7 @@ import { IAboutContent } from './about';
 import { IHomeContent } from './home';
 import { IProductContent } from './product';
 import { IContactContent } from './contact';
+import { IModulesPageContent } from './modulesPage';
 
 export interface IContentMap {
   home: IHomeContent;
@@ -10,6 +11,7 @@ export interface IContentMap {
   about: IAboutContent;
   product: IProductContent;
   contact: IContactContent;
+  modulesPage: IModulesPageContent;
 }
 
 export type ContentKey = keyof IContentMap;
