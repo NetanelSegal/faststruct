@@ -32,6 +32,7 @@ const SearchInput = ({
     }, debounceMs);
 
     return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [localValue, debounceMs]);
 
   const handleClear = () => {

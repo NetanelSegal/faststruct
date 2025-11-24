@@ -1,20 +1,24 @@
 'use client';
 
-import { Section } from '@/components/Section';
 import FilterBar from './components/FilterBar';
-import SortSelect from './components/SortSelect';
 import SearchInput from './components/SearchInput';
-import { IModulesPageContent } from '@/types/modulesPage';
-import { useFilterState } from '@/hooks/useFilterState';
+import { IModulesPageContent, IFilterState } from '@/types/modulesPage';
 
 interface ModulesFilterSectionProps {
   content: IModulesPageContent;
+  filterState: IFilterState;
+  onFilterChange: (key: keyof IFilterState, value: string) => void;
+  onClearAll: () => void;
+  activeFilterCount: number;
 }
 
-const ModulesFilterSection = ({ content }: ModulesFilterSectionProps) => {
-  const { filterState, handleFilterChange, handleClearAll, activeFilterCount } =
-    useFilterState();
-
+const ModulesFilterSection = ({
+  content,
+  filterState,
+  onFilterChange,
+  onClearAll,
+  activeFilterCount,
+}: ModulesFilterSectionProps) => {
   return (
     <section className='bg-dark container-padding text-light pt-8 pb-0 md:pt-12 lg:pt-16'>
       <div className='flex flex-col gap-4'>
@@ -23,7 +27,7 @@ const ModulesFilterSection = ({ content }: ModulesFilterSectionProps) => {
           <SearchInput
             search={content.search}
             value={filterState.search}
-            onChange={(value) => handleFilterChange('search', value)}
+            onChange={(value) => onFilterChange('search', value)}
           />
         </div>
 
@@ -32,12 +36,12 @@ const ModulesFilterSection = ({ content }: ModulesFilterSectionProps) => {
           <FilterBar
             filters={content.filters}
             filterState={filterState}
-            onFilterChange={handleFilterChange}
-            onClearAll={handleClearAll}
+            onFilterChange={onFilterChange}
+            onClearAll={onClearAll}
             activeFilterCount={activeFilterCount}
             sort={content.sort}
             sortValue={filterState.sort}
-            onSortChange={(value) => handleFilterChange('sort', value)}
+            onSortChange={(value) => onFilterChange('sort', value)}
           />
         </div>
       </div>

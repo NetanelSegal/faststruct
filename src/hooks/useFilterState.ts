@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { IFilterState } from '@/types/modulesPage';
 
 /**
@@ -14,11 +14,15 @@ export function useFilterState() {
     sort: 'default',
   });
 
-  const handleFilterChange = (key: keyof IFilterState, value: string) => {
-    setFilterState((prev) => ({ ...prev, [key]: value }));
-  };
+  // Memoize handlers to prevent unnecessary rerenders
+  const handleFilterChange = useCallback(
+    (key: keyof IFilterState, value: string) => {
+      setFilterState((prev) => ({ ...prev, [key]: value }));
+    },
+    []
+  );
 
-  const handleClearAll = () => {
+  const handleClearAll = useCallback(() => {
     setFilterState({
       bedrooms: '',
       bathrooms: '',
@@ -26,7 +30,7 @@ export function useFilterState() {
       search: '',
       sort: 'default',
     });
-  };
+  }, []);
 
   const activeFilterCount = useMemo(() => {
     let count = 0;

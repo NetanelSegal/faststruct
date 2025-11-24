@@ -2,7 +2,7 @@
 
 import { ModuleCard } from '@/sections/home/components/ModuleCard';
 import { IModule } from '@/types/modules';
-import { motion, Variants } from 'motion/react';
+import { motion, AnimatePresence, Variants } from 'motion/react';
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -20,31 +20,36 @@ const itemVariants: Variants = {
 };
 
 const ModuleList = ({ modules }: { modules: IModule[] }) => {
+  const modulesKey = modules.map((m) => m.slug).join(',');
+
   return (
-    <motion.div
-      className='flex flex-col justify-center gap-8 md:flex-row md:flex-wrap'
-      variants={containerVariants}
-      initial='hidden'
-      whileInView='visible'
-      viewport={{ once: true, amount: 0.2 }}>
-      {modules.map((module, index) => {
-        return (
-          <ModuleCard
-            index={index}
-            key={module.slug}
-            slug={module.slug}
-            imageUrl={module.mainImage}
-            title={module.title}
-            specs={[
-              `${module.specs.areaSqft} sqft`,
-              `${module.specs.bedrooms} Bedroom`,
-              `${module.specs.bathrooms} Bathroom`,
-            ]}
-            variants={itemVariants}
-          />
-        );
-      })}
-    </motion.div>
+    <AnimatePresence mode='wait'>
+      <motion.div
+        key={modulesKey}
+        className='flex flex-col justify-center gap-8 md:flex-row md:flex-wrap'
+        variants={containerVariants}
+        initial='hidden'
+        animate='visible'
+        exit='hidden'>
+        {modules.map((module, index) => {
+          return (
+            <ModuleCard
+              index={index}
+              key={module.slug}
+              slug={module.slug}
+              imageUrl={module.mainImage}
+              title={module.title}
+              specs={[
+                `${module.specs.areaSqft} sqft`,
+                `${module.specs.bedrooms} Bedroom`,
+                `${module.specs.bathrooms} Bathroom`,
+              ]}
+              variants={itemVariants}
+            />
+          );
+        })}
+      </motion.div>
+    </AnimatePresence>
   );
 };
 
