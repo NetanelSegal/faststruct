@@ -3,6 +3,7 @@
 import { Fragment, ReactNode, useEffect, useState } from 'react';
 import LogoStrokeFillAnimated from './LogoStrokeFillAnimated';
 import { AnimatePresence, motion, Variants } from 'motion/react';
+import { useLenis } from 'lenis/react';
 
 interface IWebsiteLoaderProps {
   children: ReactNode;
@@ -12,17 +13,24 @@ const LOGO_ANIMATION_DURATION = 3; // seconds
 const FRAME_ANIMATION_DURATION = 1.2; // seconds
 
 const WebsiteLoader = ({ children }: IWebsiteLoaderProps) => {
+  const lenis = useLenis();
   const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {
+    if (!lenis) return;
+    lenis.stop();
+
     const timer = setTimeout(
       () => {
         setShowLoader(false);
+        lenis.start();
       },
       (LOGO_ANIMATION_DURATION + FRAME_ANIMATION_DURATION) * 1000
     );
-    return () => clearTimeout(timer);
-  }, []);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [lenis]);
 
   const loaderVariants: Variants = {
     hidden: {
@@ -35,12 +43,11 @@ const WebsiteLoader = ({ children }: IWebsiteLoaderProps) => {
 
   return (
     <AnimatePresence>
-      {showLoader ? (
-        <>
+      {showLoader && (
+        <Fragment key='website-loader'>
           <motion.div
-            key='website-loader'
             variants={loaderVariants}
-            initial='hidden'
+            initial='visible'
             animate='visible'
             exit='hidden'
             transition={{
@@ -54,10 +61,9 @@ const WebsiteLoader = ({ children }: IWebsiteLoaderProps) => {
             />
           </motion.div>
           <div className='bg-dark fixed h-[120vh] w-full'></div>
-        </>
-      ) : (
-        <Fragment key='website-content'>{children}</Fragment>
+        </Fragment>
       )}
+      <Fragment key='website-content'>{children}</Fragment>
     </AnimatePresence>
   );
 };
