@@ -27,7 +27,6 @@ const TestimonialsSection: React.FC<ITestimonialsSectionProps> = ({
           fill
           className='object-cover object-center'
           priority={false}
-          quality={85}
         />
         {/* Dark Overlay */}
         <div className='bg-dark/70 absolute inset-0' />

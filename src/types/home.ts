@@ -27,16 +27,6 @@ export interface IWhyModularPanelized {
   combinedApproach: IConstructionCategory;
 }
 
-export interface IProcessStep {
-  title: string;
-  text: string;
-}
-
-export interface IProcess {
-  title: string;
-  steps: IProcessStep[];
-}
-
 export interface IExperienceMetric {
   title: string;
   text: string;
@@ -66,7 +56,6 @@ export interface IHomeContent {
   intro: IIntro;
   features: IFeatureItem[];
   whyModularPanelized: IWhyModularPanelized;
-  process: IProcess;
   experienceMetrics: IExperienceMetric[];
   faq: IFAQ;
   cta: ICTA;

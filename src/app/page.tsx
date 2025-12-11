@@ -5,7 +5,7 @@ import { FeatureCarousel } from '@/sections/home/FeatureCarouselSection';
 import CTASection from '@/sections/home/CTASection';
 import ExploreHomesSection from '@/sections/home/ExploreHomesSection';
 import WhyModularPanelizedSection from '@/sections/home/WhyModularPanelizedSection';
-import OurProcessSection from '@/sections/home/OurProcessSection';
+import OurProcessSection from '@/sections/shared/OurProcessSection';
 import FAQSection from '@/sections/home/FAQSection';
 import ExperienceSection from '@/sections/home/ExperienceSection';
 import { getContent, getModules } from '@/lib/content';
@@ -22,6 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const HomePage = async () => {
   const content = await getContent('home', 'en');
+  const processContent = await getContent('process', 'en');
   const modulesData = await getModules();
 
   return (
@@ -48,7 +49,7 @@ const HomePage = async () => {
       <WhyModularPanelizedSection {...content.whyModularPanelized} />
 
       {/* Our Process Section */}
-      <OurProcessSection {...content.process} />
+      <OurProcessSection {...processContent} />
 
       {/* Testimonial Section */}
       <TestimonialsSection testimonials={content.testimonials} />

@@ -4,7 +4,7 @@ export const ROUTES = [
   { href: '/', title: 'Home' },
   { href: '/modules', title: 'Modules' },
   { href: '/about', title: 'About' },
-  { href: '/technical', title: 'Technical' },
+  { href: '/the-system', title: 'The System' },
   {
     href: '/contact',
     title: 'Call us',

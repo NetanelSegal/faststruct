@@ -1,10 +1,10 @@
 import { getModules } from '@/lib/content';
 import { notFound } from 'next/navigation';
 import { isModulePageEnabled } from '@/lib/page-config';
-import HeroProductSection from '@/sections/product/HeroProductSection';
-import SpecificationsSection from '@/sections/product/SpecificationsSection';
-import ProductDescriptionSection from '@/sections/product/ProductDescriptionSection';
-import StackedImagesSection from '@/sections/product/StackedImagesSection';
+import HeroProductSection from '@/sections/module/HeroProductSection';
+import SpecificationsSection from '@/sections/module/SpecificationsSection';
+import ProductDescriptionSection from '@/sections/module/ProductDescriptionSection';
+import StackedImagesSection from '@/sections/module/StackedImagesSection';
 import ExploreHomesSection from '@/sections/home/ExploreHomesSection';
 import Page from '@/components/Page';
 

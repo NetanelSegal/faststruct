@@ -1,6 +1,6 @@
 'use client';
 
-import { IProcess } from '@/types/home';
+import { IProcess } from '@/types/process';
 import AnimatedHeading from '@/components/text-animation/AnimatedHeading';
 import { useEffect, useRef, useState } from 'react';
 import {

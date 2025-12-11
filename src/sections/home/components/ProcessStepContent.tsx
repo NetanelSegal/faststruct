@@ -1,6 +1,6 @@
 'use client';
 
-import { IProcess } from '@/types/home';
+import { IProcess } from '@/types/process';
 import { motion } from 'motion/react';
 
 type IProcessStepContentProps = IProcess['steps'][number] & {

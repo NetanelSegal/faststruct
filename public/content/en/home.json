@@ -78,31 +78,6 @@
       "image": "/assets/why-image-3.png"
     }
   },
-  "process": {
-    "title": "Our Process",
-    "steps": [
-      {
-        "title": "Consultation",
-        "text": "We start with a conversation to understand your vision, needs, and budget."
-      },
-      {
-        "title": "Proposal & Agreement",
-        "text": "You receive a transparent scope of work, timeline, and cost breakdown."
-      },
-      {
-        "title": "Design & Permits",
-        "text": "Our team prepares drawings, selects materials, and manages permits."
-      },
-      {
-        "title": "Construction",
-        "text": "Modules or panels are delivered and assembled, with full project management and regular updates."
-      },
-      {
-        "title": "Completion & Handover",
-        "text": "Final inspections, walkthrough, and delivery - your new home or space is ready."
-      }
-    ]
-  },
   "cta": {
     "title": "Want to build with us?"
   },
