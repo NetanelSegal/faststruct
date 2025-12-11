@@ -12,12 +12,10 @@ const FeatureRow = ({
   imageUrl,
   index,
   isActive,
-  isMobile,
   rowRef,
 }: IFeatureItem & {
   index: number;
   isActive: boolean;
-  isMobile: boolean;
   rowRef: (el: HTMLDivElement | null) => void;
 }) => {
   // Desktop: flip on hover, Mobile: flip on scroll activation
@@ -150,7 +148,6 @@ const FeaturesGridSection = ({ items }: IFeaturesGrid) => {
             {...item}
             index={index}
             isActive={activeIndex === index}
-            isMobile={isMobile}
             rowRef={(el) => {
               rowRefs.current[index] = el;
             }}

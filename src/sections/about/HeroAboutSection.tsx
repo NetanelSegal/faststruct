@@ -3,9 +3,7 @@
 import Image from 'next/image';
 import AnimatedHeading from '@/components/text-animation/AnimatedHeading';
 import FadeInParagraph from '@/components/text-animation/FadeInParagraph';
-import Parallax from '@/components/Parallax';
 import { IHeroAbout } from '@/types/about';
-import { Section } from '@/components/Section';
 import { useRef } from 'react';
 import { useScroll, useTransform, motion } from 'motion/react';
 import { WhereInnovation } from './components/WhereInnovationMeatsHome';

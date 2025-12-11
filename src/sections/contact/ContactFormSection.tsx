@@ -53,7 +53,7 @@ const ContactFormSection = ({ form, info }: ContactFormSectionProps) => {
       } else {
         setSubmitMessage({ type: 'error', text: response.message });
       }
-    } catch (error) {
+    } catch {
       setSubmitMessage({
         type: 'error',
         text: 'An unexpected error occurred. Please try again later.',

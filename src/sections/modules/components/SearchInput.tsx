@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ISearch } from '@/types/modulesPage';
-import { useDebounce } from '@/hooks/useDebounce';
 import clsx from 'clsx';
 
 interface SearchInputProps {

@@ -1,6 +1,5 @@
 'use client';
 
-import { useMemo } from 'react';
 import ModulesFilterSection from './ModulesFilterSection';
 import ModulesGridSection from './ModulesGridSection';
 import { IModule } from '@/types/modules';

@@ -5,7 +5,6 @@ import AnimatedHeading from '@/components/text-animation/AnimatedHeading';
 import FadeInParagraph from '@/components/text-animation/FadeInParagraph';
 import { IHeroSystem } from '@/types/theSystem';
 import { useRef } from 'react';
-import { useScroll, useTransform, motion } from 'motion/react';
 
 const HeroSystemSection = ({
   title,
@@ -13,13 +12,6 @@ const HeroSystemSection = ({
   backgroundImage,
 }: IHeroSystem) => {
   const sectionRef = useRef<HTMLElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['end end', 'end start'],
-  });
-
-  const topLineY = useTransform(scrollYProgress, [0, 0.5, 1], [120, 0, 0]);
 
   return (
     <section

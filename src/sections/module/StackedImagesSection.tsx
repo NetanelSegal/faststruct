@@ -7,7 +7,6 @@ import {
   useTransform,
   useMotionTemplate,
   MotionValue,
-  useMotionValueEvent,
 } from 'motion/react';
 import { useRef } from 'react';
 import { IStackedImage, IStackedImages } from '@/types/product';

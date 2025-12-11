@@ -1,7 +1,6 @@
 'use client';
 
 import { Section } from '@/components/Section';
-import { Button } from '@/components/Button';
 import AnimatedHeading from '@/components/text-animation/AnimatedHeading';
 import { ICTA } from '@/types/home';
 import { motion } from 'motion/react';

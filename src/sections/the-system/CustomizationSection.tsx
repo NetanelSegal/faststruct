@@ -1,6 +1,5 @@
 'use client';
 
-import { Section } from '@/components/Section';
 import AnimatedHeading from '@/components/text-animation/AnimatedHeading';
 import FadeInParagraph from '@/components/text-animation/FadeInParagraph';
 import { ICustomization } from '@/types/theSystem';

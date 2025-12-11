@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { motion, useInView, useScroll, useTransform } from 'motion/react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import { RefObject, useRef, useState } from 'react';
 import { ITeam } from '@/types/about';
 import { Section } from '@/components/Section';
