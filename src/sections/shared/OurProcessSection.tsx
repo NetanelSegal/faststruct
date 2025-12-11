@@ -161,10 +161,7 @@ const OurProcessSection: React.FC<IProcess> = ({ title, steps }) => {
   return (
     <section
       ref={sectionRef}
-      className={clsx(
-        'relative z-0 text-center',
-        isMobile && 'section-padding-y'
-      )}>
+      className='section-padding-y relative z-0 text-center'>
       <AnimatedHeading
         text={title}
         className='text-h1 font-bebas text-light'
@@ -315,4 +312,3 @@ export function getSoftSnappedIndex(
 
   return { finalIndex, snappedIndex, blend };
 }
-

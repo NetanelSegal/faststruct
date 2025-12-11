@@ -50,9 +50,9 @@ const ScalableSolutionsSection = ({
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}>
               <div className='mb-6 flex justify-center'>
-                <div className='border-accent/30 bg-accent/20 rounded-full border-2 p-6'>
+                <div className='border-accent/30 bg-accent/20 flex aspect-square h-20 w-20 items-center justify-center overflow-hidden rounded-full border-2'>
                   <i
-                    className={`fa-solid ${getIcon(solution.icon)} text-h1 text-accent`}></i>
+                    className={`fa-solid ${getIcon(solution.icon)} text-accent text-2xl`}></i>
                 </div>
               </div>
               <h4 className='text-h4 font-bebas text-center text-white'>

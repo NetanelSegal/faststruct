@@ -10,15 +10,15 @@ interface ConstructionRouteCardProps {
 const ConstructionRouteCard = ({ route }: ConstructionRouteCardProps) => {
   return (
     <div className='bg-dark overflow-hidden rounded-lg p-5'>
-      <div className='relative aspect-video w-full overflow-hidden rounded-md'>
+      <div className='relative mb-6 aspect-video w-full overflow-hidden rounded-md'>
         <Image
           src={route.imageUrl}
           alt={route.title}
           fill
-          className='object-cover object-center'
+          className='scale-125 object-cover object-center'
         />
       </div>
-      <div className='bg-dark p-6'>
+      <div className='bg-dark'>
         <h3 className='text-h2 font-bebas mb-2 text-white'>{route.title}</h3>
         <p className='text-h6 text-light/90 mb-4'>{route.description}</p>
         <ul className='space-y-2'>
