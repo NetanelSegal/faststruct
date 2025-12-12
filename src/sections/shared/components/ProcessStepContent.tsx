@@ -29,14 +29,14 @@ const ProcessStepContent = ({
         left: x,
         width,
         opacity: 1 - tranformValue,
-        scale: 1 - tranformValue,
+        scale: 1 - tranformValue * 0.5,
         perspective: 1000,
       }}
       transition={{ duration: 0.5, ease: 'easeInOut' }}
       className='point absolute p-5 text-start text-white md:p-0 md:pr-10'>
       <motion.h2
         style={{
-          rotateY: 360 + tranformValue * 90,
+          rotateY: tranformValue * 15,
           transformStyle: 'preserve-3d',
         }}
         className='font-bebas text-h1 text-light'>
@@ -44,7 +44,7 @@ const ProcessStepContent = ({
       </motion.h2>
       <motion.p
         style={{
-          rotateY: 360 + tranformValue * 90,
+          rotateY: tranformValue * 15,
           transformStyle: 'preserve-3d',
         }}
         className='font-poppins text-h4'>
@@ -55,4 +55,3 @@ const ProcessStepContent = ({
 };
 
 export default ProcessStepContent;
-

@@ -184,18 +184,20 @@ const OurProcessSection: React.FC<IProcess> = ({ title, steps }) => {
 
           {/* steps */}
           <div ref={stepsPlaceholderRef} className='grow md:self-stretch'>
-            {steps.map((s, i) => (
-              <ProcessStepContent
-                index={i}
-                updateRef={(ref) => (stepsRefs.current[i] = ref)}
-                {...s}
-                key={s.title}
-                x={positions[i].x}
-                y={positions[i].y}
-                width={stepWidth}
-                tranformValue={Math.abs(stepNumber - i) * 0.5}
-              />
-            ))}
+            {steps.map((s, i) => {
+              return (
+                <ProcessStepContent
+                  index={i}
+                  updateRef={(ref) => (stepsRefs.current[i] = ref)}
+                  {...s}
+                  key={s.title}
+                  x={positions[i].x}
+                  y={positions[i].y}
+                  width={stepWidth}
+                  tranformValue={tranformValueCalculation(stepNumber, i)}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
@@ -312,3 +314,11 @@ export function getSoftSnappedIndex(
 
   return { finalIndex, snappedIndex, blend };
 }
+
+// const tranformValueCalculation = (stepNumber: number, i: number) => {
+//   return stepNumber - i > 1 ? 1 : stepNumber - i < -1 ? -1 : stepNumber - i;
+// };
+
+const tranformValueCalculation = (stepNumber: number, i: number) => {
+  return stepNumber - i >= -1.5 && stepNumber - i <= 1.5 ? stepNumber - i : 1;
+};
