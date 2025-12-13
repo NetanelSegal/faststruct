@@ -14,7 +14,7 @@ const CustomizationSection = ({ customization }: CustomizationSectionProps) => {
   return (
     <section className='text-dark section-padding-top bg-white'>
       <div className='flex flex-col gap-8'>
-        <div className='text-center'>
+        <div className='container-padding text-center'>
           <AnimatedHeading
             text={customization.title}
             className='text-h1 font-bebas text-dark mb-4'
@@ -24,7 +24,6 @@ const CustomizationSection = ({ customization }: CustomizationSectionProps) => {
             {customization.subtitle}
           </FadeInParagraph>
         </div>
-
         <div className='mt-12 grid grid-cols-1 md:grid-cols-2'>
           {customization.options.map((option, index) => (
             <motion.div

@@ -38,13 +38,13 @@ const HeroSection: React.FC<IHeroSection> = ({
       </Parallax>
 
       {/* image container */}
-      <div className='relative aspect-[3/1] overflow-hidden'>
+      <div className='relative aspect-[3/1] overflow-hidden md:mb-10'>
         <Image
           priority
           fill
           src='/assets/hero-image.png'
           alt='Modern modular home'
-          className='object-cover object-top'
+          className='object-cover object-[50%_10px] md:object-[50%_20px]'
         />
       </div>
     </div>
