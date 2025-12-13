@@ -5,13 +5,16 @@ import Page from '@/components/Page';
 import HeroModulesSection from '@/sections/modules/HeroModulesSection';
 import ModulesContent from '@/sections/modules/ModulesContent';
 import LoadingSkeleton from '@/sections/modules/components/LoadingSkeleton';
+import { generateSocialMetadata } from '@/lib/metadata';
 
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getContent('modulesPage', 'en');
-  return {
+  return generateSocialMetadata({
     title: 'Explore Our Modules | Fastruct',
     description: content.hero.subtitle,
-  };
+    image: '/assets/hero-image.png',
+    url: '/modules',
+  });
 }
 
 const ModulesPage = async () => {

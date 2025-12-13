@@ -9,13 +9,16 @@ import NineCoreSystemSection from '@/sections/the-system/NineCoreSystemSection';
 import ScalableSolutionsSection from '@/sections/the-system/ScalableSolutionsSection';
 import CustomizationSection from '@/sections/the-system/CustomizationSection';
 import OurProcessSection from '@/sections/shared/OurProcessSection';
+import { generateSocialMetadata } from '@/lib/metadata';
 
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getContent('theSystem', 'en');
-  return {
+  return generateSocialMetadata({
     title: 'The System | Fastruct',
     description: content.hero.subtitle,
-  };
+    image: content.hero.backgroundImage,
+    url: '/the-system',
+  });
 }
 
 const TheSystemPage = async () => {

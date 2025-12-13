@@ -8,6 +8,7 @@ import WebsiteLoader from '@/components/website-loader/WebsiteLoader';
 import { ReactLenis } from 'lenis/react';
 import { getContent } from '@/lib/content';
 import AppNavigationProvider from '@/contexts/AppNavigationProvider';
+import { generateSocialMetadata } from '@/lib/metadata';
 
 const fontPoppins = Poppins({
   subsets: ['latin'],
@@ -22,8 +23,10 @@ const fontBebasNeue = Bebas_Neue({
 });
 
 export const metadata: Metadata = {
-  title: 'Fastruct',
-  description: 'Modular + Panelized construction, done right.',
+  ...generateSocialMetadata({
+    title: 'Fastruct',
+    description: 'Modular + Panelized construction, done right.',
+  }),
 };
 
 export default async function RootLayout({

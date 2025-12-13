@@ -8,13 +8,16 @@ import { isPageEnabled } from '@/lib/page-config';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import Page from '@/components/Page';
+import { generateSocialMetadata } from '@/lib/metadata';
 
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getContent('about', 'en');
-  return {
+  return generateSocialMetadata({
     title: 'About Us | Fastruct',
     description: content.hero.subtitle,
-  };
+    image: content.hero.backgroundImage,
+    url: '/about',
+  });
 }
 
 const AboutPage = async () => {

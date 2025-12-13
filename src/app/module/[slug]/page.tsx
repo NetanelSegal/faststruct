@@ -7,6 +7,7 @@ import ProductDescriptionSection from '@/sections/module/ProductDescriptionSecti
 import StackedImagesSection from '@/sections/module/StackedImagesSection';
 import ExploreHomesSection from '@/sections/home/ExploreHomesSection';
 import Page from '@/components/Page';
+import { generateSocialMetadata } from '@/lib/metadata';
 
 interface ModulePageProps {
   params: Promise<{ slug: string }>;
@@ -30,10 +31,12 @@ export async function generateMetadata({ params }: ModulePageProps) {
     };
   }
 
-  return {
+  return generateSocialMetadata({
     title: `${module.title} | Fastruct`,
     description: module.summary,
-  };
+    image: module.mainImage,
+    url: `/module/${slug}`,
+  });
 }
 
 const ModulePage = async ({ params }: ModulePageProps) => {

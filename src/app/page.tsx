@@ -11,13 +11,16 @@ import ExperienceSection from '@/sections/home/ExperienceSection';
 import { getContent, getModules } from '@/lib/content';
 import type { Metadata } from 'next';
 import Page from '@/components/Page';
+import { generateSocialMetadata } from '@/lib/metadata';
 
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getContent('home', 'en');
-  return {
+  return generateSocialMetadata({
     title: 'Home | Fastruct',
     description: content.heroSection.subtitle,
-  };
+    image: '/assets/hero-image.png',
+    url: '/',
+  });
 }
 
 const HomePage = async () => {
