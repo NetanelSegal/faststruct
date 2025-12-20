@@ -118,7 +118,7 @@ const OurProcessSection: React.FC<IProcess> = ({ title, steps }) => {
       stepsPlaceholderCenter.y -= contentContainerRect.top;
 
       const distance = isMobile
-        ? window.innerHeight * 0.7
+        ? window.innerHeight * 0.8
         : calculateDistance(
             numberContainerCenter.x,
             numberContainerCenter.y,
@@ -172,7 +172,6 @@ const OurProcessSection: React.FC<IProcess> = ({ title, steps }) => {
       />
 
       {/* content */}
-
       <div
         ref={contentContainerRef}
         className='sticky top-28 z-0 mt-10 h-screen md:top-0'>

@@ -16,16 +16,14 @@
       "/assets/modules-images/module-1/out-2.jpg",
       "/assets/modules-images/module-1/out-3.jpg",
       "/assets/modules-images/module-1/out-4.jpg",
-      "/assets/modules-images/module-1/in-1.jpg",
-      "/assets/modules-images/module-1/in-2.jpg",
-      "/assets/modules-images/module-1/in-3.jpg",
-      "/assets/modules-images/module-1/in-4.jpg",
-      "/assets/modules-images/module-1/in-5.jpg",
-      "/assets/modules-images/module-1/in-6.jpg"
+      "/assets/modules-images/all-modules-in-1.jpg",
+      "/assets/modules-images/all-modules-in-2.jpg",
+      "/assets/modules-images/all-modules-in-3.jpg",
+      "/assets/modules-images/all-modules-in-4.jpg",
+      "/assets/modules-images/all-modules-in-5.jpg",
+      "/assets/modules-images/all-modules-in-6.jpg"
     ],
-    "sketchPlans": [
-      "https://media.istockphoto.com/id/476190573/vector/architecture.jpg?s=612x612&w=0&k=20&c=ZhCh_zpDZxEYbZipufMpCepHD79Vlbs5GGO76dQfTlg="
-    ]
+    "sketchPlans": ["/assets/modules-images/module-1/floor-plan-1.png"]
   },
   {
     "slug": "family-smart-unit",
@@ -44,16 +42,14 @@
       "/assets/modules-images/module-1/out-2.jpg",
       "/assets/modules-images/module-1/out-3.jpg",
       "/assets/modules-images/module-1/out-4.jpg",
-      "/assets/modules-images/module-1/in-1.jpg",
-      "/assets/modules-images/module-1/in-2.jpg",
-      "/assets/modules-images/module-1/in-3.jpg",
-      "/assets/modules-images/module-1/in-4.jpg",
-      "/assets/modules-images/module-1/in-5.jpg",
-      "/assets/modules-images/module-1/in-6.jpg"
+      "/assets/modules-images/all-modules-in-1.jpg",
+      "/assets/modules-images/all-modules-in-2.jpg",
+      "/assets/modules-images/all-modules-in-3.jpg",
+      "/assets/modules-images/all-modules-in-4.jpg",
+      "/assets/modules-images/all-modules-in-5.jpg",
+      "/assets/modules-images/all-modules-in-6.jpg"
     ],
-    "sketchPlans": [
-      "https://media.istockphoto.com/id/476190573/vector/architecture.jpg?s=612x612&w=0&k=20&c=ZhCh_zpDZxEYbZipufMpCepHD79Vlbs5GGO76dQfTlg="
-    ]
+    "sketchPlans": ["/assets/modules-images/module-2/floor-plan-2.png"]
   },
   {
     "slug": "live-and-work-hybrid",
@@ -72,16 +68,14 @@
       "/assets/modules-images/module-1/out-2.jpg",
       "/assets/modules-images/module-1/out-3.jpg",
       "/assets/modules-images/module-1/out-4.jpg",
-      "/assets/modules-images/module-1/in-1.jpg",
-      "/assets/modules-images/module-1/in-2.jpg",
-      "/assets/modules-images/module-1/in-3.jpg",
-      "/assets/modules-images/module-1/in-4.jpg",
-      "/assets/modules-images/module-1/in-5.jpg",
-      "/assets/modules-images/module-1/in-6.jpg"
+      "/assets/modules-images/all-modules-in-1.jpg",
+      "/assets/modules-images/all-modules-in-2.jpg",
+      "/assets/modules-images/all-modules-in-3.jpg",
+      "/assets/modules-images/all-modules-in-4.jpg",
+      "/assets/modules-images/all-modules-in-5.jpg",
+      "/assets/modules-images/all-modules-in-6.jpg"
     ],
-    "sketchPlans": [
-      "https://media.istockphoto.com/id/476190573/vector/architecture.jpg?s=612x612&w=0&k=20&c=ZhCh_zpDZxEYbZipufMpCepHD79Vlbs5GGO76dQfTlg="
-    ]
+    "sketchPlans": ["/assets/modules-images/module-3/floor-plan-3.png"]
   },
   {
     "slug": "executive-comfort",
@@ -100,16 +94,14 @@
       "/assets/modules-images/module-1/out-2.jpg",
       "/assets/modules-images/module-1/out-3.jpg",
       "/assets/modules-images/module-1/out-4.jpg",
-      "/assets/modules-images/module-1/in-1.jpg",
-      "/assets/modules-images/module-1/in-2.jpg",
-      "/assets/modules-images/module-1/in-3.jpg",
-      "/assets/modules-images/module-1/in-4.jpg",
-      "/assets/modules-images/module-1/in-5.jpg",
-      "/assets/modules-images/module-1/in-6.jpg"
+      "/assets/modules-images/all-modules-in-1.jpg",
+      "/assets/modules-images/all-modules-in-2.jpg",
+      "/assets/modules-images/all-modules-in-3.jpg",
+      "/assets/modules-images/all-modules-in-4.jpg",
+      "/assets/modules-images/all-modules-in-5.jpg",
+      "/assets/modules-images/all-modules-in-6.jpg"
     ],
-    "sketchPlans": [
-      "https://media.istockphoto.com/id/476190573/vector/architecture.jpg?s=612x612&w=0&k=20&c=ZhCh_zpDZxEYbZipufMpCepHD79Vlbs5GGO76dQfTlg="
-    ]
+    "sketchPlans": ["/assets/modules-images/module-4/floor-plan-4.png"]
   },
   {
     "slug": "ultra-compact-retreat",
@@ -128,15 +120,13 @@
       "/assets/modules-images/module-1/out-2.jpg",
       "/assets/modules-images/module-1/out-3.jpg",
       "/assets/modules-images/module-1/out-4.jpg",
-      "/assets/modules-images/module-1/in-1.jpg",
-      "/assets/modules-images/module-1/in-2.jpg",
-      "/assets/modules-images/module-1/in-3.jpg",
-      "/assets/modules-images/module-1/in-4.jpg",
-      "/assets/modules-images/module-1/in-5.jpg",
-      "/assets/modules-images/module-1/in-6.jpg"
+      "/assets/modules-images/all-modules-in-1.jpg",
+      "/assets/modules-images/all-modules-in-2.jpg",
+      "/assets/modules-images/all-modules-in-3.jpg",
+      "/assets/modules-images/all-modules-in-4.jpg",
+      "/assets/modules-images/all-modules-in-5.jpg",
+      "/assets/modules-images/all-modules-in-6.jpg"
     ],
-    "sketchPlans": [
-      "https://media.istockphoto.com/id/476190573/vector/architecture.jpg?s=612x612&w=0&k=20&c=ZhCh_zpDZxEYbZipufMpCepHD79Vlbs5GGO76dQfTlg="
-    ]
+    "sketchPlans": []
   }
 ]
