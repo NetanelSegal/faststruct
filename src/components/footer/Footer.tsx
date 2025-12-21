@@ -24,7 +24,8 @@ const Footer = ({ contactInfo, contactSocial }: FooterProps) => {
           <FooterLinksAndContact info={contactInfo} social={contactSocial} />
         </div>
         <div className='border-cream/20 mt-12 border-t pt-8 text-center text-sm opacity-70'>
-          © {new Date().getFullYear()} Fastruct. All rights reserved.
+          <p>© {new Date().getFullYear()} Fastruct. All rights reserved.</p>
+          <p className='mt-2'>{contactInfo.license}</p>
         </div>
       </div>
     </footer>

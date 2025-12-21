@@ -134,6 +134,18 @@ const ContactFormSection = ({ form, info }: ContactFormSectionProps) => {
                   </a>
                 </div>
               </div>
+
+              <div className='flex items-start gap-4'>
+                <div className='bg-accent/20 flex h-12 w-12 shrink-0 items-center justify-center rounded-lg'>
+                  <i className='fa-solid fa-certificate text-accent text-xl'></i>
+                </div>
+                <div>
+                  <h4 className='text-h5 font-bebas text-light mb-1'>
+                    License
+                  </h4>
+                  <p className='text-h6 text-light/80'>{info.license}</p>
+                </div>
+              </div>
             </div>
           </motion.div>
 

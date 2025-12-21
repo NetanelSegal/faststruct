@@ -21,8 +21,6 @@ const ProcessStepContent = ({
   width,
   tranformValue,
 }: IProcessStepContentProps) => {
-  console.log('tranformValue', tranformValue);
-
   return (
     <motion.div
       ref={updateRef}

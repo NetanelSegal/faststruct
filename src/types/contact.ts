@@ -37,6 +37,7 @@ export interface IContactInfo {
   address: IContactAddress;
   email: string;
   phone: IContactPhone;
+  license: string;
 }
 
 export interface ISocialLink {

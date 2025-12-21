@@ -29,14 +29,15 @@
   },
   "info": {
     "address": {
-      "street": "123 Main Street",
-      "city": "Anytown, USA 12345"
+      "street": "3395 Edward Ave",
+      "city": "Santa Clara, CA 95054"
     },
-    "email": "contact@fastruct.com",
+    "email": "Info@fastruct.com",
     "phone": {
       "display": "(123) 456-7890",
       "link": "+1234567890"
-    }
+    },
+    "license": "CSLB #1147858"
   },
   "social": {
     "title": "Follow Us",
