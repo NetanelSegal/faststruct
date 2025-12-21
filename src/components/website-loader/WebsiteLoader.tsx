@@ -23,13 +23,10 @@ const WebsiteLoader = ({ children }: IWebsiteLoaderProps) => {
     lenis.stop();
 
     // Wait for text animation to complete before starting frame exit
-    const timer = setTimeout(
-      () => {
-        setShowLoader(false);
-        lenis.start();
-      },
-      TEXT_ANIMATION_COMPLETE_TIME * 1000
-    );
+    const timer = setTimeout(() => {
+      // setShowLoader(false);
+      lenis.start();
+    }, TEXT_ANIMATION_COMPLETE_TIME * 1000);
     return () => {
       clearTimeout(timer);
     };
@@ -37,7 +34,7 @@ const WebsiteLoader = ({ children }: IWebsiteLoaderProps) => {
 
   const loaderVariants: Variants = {
     hidden: {
-      y: '-120vh',
+      // y: '-120vh',
     },
     visible: {
       y: '0vh',
@@ -61,6 +58,7 @@ const WebsiteLoader = ({ children }: IWebsiteLoaderProps) => {
             <LogoStrokeFillAnimated
               delay={FRAME_ANIMATION_DURATION - LOGO_ANIMATION_DURATION * 0.25}
               duration={LOGO_ANIMATION_DURATION}
+              color='light'
             />
           </motion.div>
           <div className='bg-dark fixed h-[120vh] w-full'></div>
