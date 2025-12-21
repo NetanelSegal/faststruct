@@ -24,7 +24,7 @@ const WebsiteLoader = ({ children }: IWebsiteLoaderProps) => {
 
     // Wait for text animation to complete before starting frame exit
     const timer = setTimeout(() => {
-      // setShowLoader(false);
+      setShowLoader(false);
       lenis.start();
     }, TEXT_ANIMATION_COMPLETE_TIME * 1000);
     return () => {
@@ -34,7 +34,7 @@ const WebsiteLoader = ({ children }: IWebsiteLoaderProps) => {
 
   const loaderVariants: Variants = {
     hidden: {
-      // y: '-120vh',
+      y: '-120vh',
     },
     visible: {
       y: '0vh',
