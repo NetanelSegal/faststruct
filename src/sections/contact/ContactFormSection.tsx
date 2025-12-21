@@ -147,114 +147,131 @@ const ContactFormSection = ({ form, info }: ContactFormSectionProps) => {
                 </div>
               </div>
             </div>
-          </motion.div>
 
-          {/* Right: Contact Form */}
-          <motion.form
-            onSubmit={handleSubmit}
-            initial={{ opacity: 0, x: 30 }}
-            animate={
-              isFormInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }
-            }
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className='flex flex-col gap-6'>
-            <div className='flex flex-col gap-4'>
-              <div>
-                <label
-                  htmlFor='name'
-                  className='text-h6 text-light mb-2 block font-medium'>
-                  {form.fields.name.label}
-                </label>
-                <input
-                  type='text'
-                  id='name'
-                  name='name'
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className='border-accent/50 bg-light/10 text-light placeholder-accent/70 focus:border-accent focus:ring-accent/50 w-full rounded-lg border p-4 focus:ring-2'
-                  placeholder={form.fields.name.placeholder}
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor='email'
-                  className='text-h6 text-light mb-2 block font-medium'>
-                  {form.fields.email.label}
-                </label>
-                <input
-                  type='email'
-                  id='email'
-                  name='email'
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className='border-accent/50 bg-light/10 text-light placeholder-accent/70 focus:border-accent focus:ring-accent/50 w-full rounded-lg border p-4 focus:ring-2'
-                  placeholder={form.fields.email.placeholder}
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor='phone'
-                  className='text-h6 text-light mb-2 block font-medium'>
-                  {form.fields.phone.label}
-                </label>
-                <input
-                  type='tel'
-                  id='phone'
-                  name='phone'
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className='border-accent/50 bg-light/10 text-light placeholder-accent/70 focus:border-accent focus:ring-accent/50 w-full rounded-lg border p-4 focus:ring-2'
-                  placeholder={form.fields.phone.placeholder}
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor='message'
-                  className='text-h6 text-light mb-2 block font-medium'>
-                  {form.fields.message.label}
-                </label>
-                <textarea
-                  id='message'
-                  name='message'
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={6}
-                  className='border-accent/50 bg-light/10 text-light placeholder-accent/70 focus:border-accent focus:ring-accent/50 w-full resize-none rounded-lg border p-4 focus:ring-2'
-                  placeholder={form.fields.message.placeholder}
+            {/* Google Maps Embed */}
+            <div className='mt-6'>
+              <h4 className='text-h5 font-bebas text-light mb-4'>Location</h4>
+              <div className='border-accent/20 h-[300px] w-full overflow-hidden rounded-lg border'>
+                <iframe
+                  src={`https://www.google.com/maps?q=${encodeURIComponent(
+                    `${info.address.street}, ${info.address.city}`
+                  )}&output=embed`}
+                  width='100%'
+                  height='100%'
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading='lazy'
+                  referrerPolicy='no-referrer-when-downgrade'
+                  className='h-full w-full'
+                  title='Fastruct Location'
                 />
               </div>
             </div>
+          </motion.div>
 
-            <Button
-              type='submit'
-              variant='primary'
-              size='lg'
-              hoverTransition='lift'
-              disabled={isSubmitting}
-              className='w-full md:w-auto'>
-              {isSubmitting ? form.submittingButton : form.submitButton}
-            </Button>
-
-            {/* Submission Message */}
-            {submitMessage.type && (
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className={`rounded-lg p-4 ${
-                  submitMessage.type === 'success'
-                    ? 'bg-accent/20 text-accent border-accent/30 border'
-                    : 'border border-red-500/30 bg-red-500/20 text-red-400'
-                }`}>
-                <p className='text-sm font-medium'>{submitMessage.text}</p>
-              </motion.div>
-            )}
-          </motion.form>
+          {/* Right: Contact Form */}
+          <div className='sticky top-0 h-min w-full'>
+            <motion.form
+              onSubmit={handleSubmit}
+              initial={{ opacity: 0, x: 30 }}
+              animate={
+                isFormInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }
+              }
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className='flex flex-col gap-6'>
+              <div className='flex flex-col gap-4'>
+                <div>
+                  <label
+                    htmlFor='name'
+                    className='text-h6 text-light mb-2 block font-medium'>
+                    {form.fields.name.label}
+                  </label>
+                  <input
+                    type='text'
+                    id='name'
+                    name='name'
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className='border-accent/50 bg-light/10 text-light placeholder-accent/70 focus:border-accent focus:ring-accent/50 w-full rounded-lg border p-4 focus:ring-2'
+                    placeholder={form.fields.name.placeholder}
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor='email'
+                    className='text-h6 text-light mb-2 block font-medium'>
+                    {form.fields.email.label}
+                  </label>
+                  <input
+                    type='email'
+                    id='email'
+                    name='email'
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className='border-accent/50 bg-light/10 text-light placeholder-accent/70 focus:border-accent focus:ring-accent/50 w-full rounded-lg border p-4 focus:ring-2'
+                    placeholder={form.fields.email.placeholder}
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor='phone'
+                    className='text-h6 text-light mb-2 block font-medium'>
+                    {form.fields.phone.label}
+                  </label>
+                  <input
+                    type='tel'
+                    id='phone'
+                    name='phone'
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className='border-accent/50 bg-light/10 text-light placeholder-accent/70 focus:border-accent focus:ring-accent/50 w-full rounded-lg border p-4 focus:ring-2'
+                    placeholder={form.fields.phone.placeholder}
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor='message'
+                    className='text-h6 text-light mb-2 block font-medium'>
+                    {form.fields.message.label}
+                  </label>
+                  <textarea
+                    id='message'
+                    name='message'
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={6}
+                    className='border-accent/50 bg-light/10 text-light placeholder-accent/70 focus:border-accent focus:ring-accent/50 w-full resize-none rounded-lg border p-4 focus:ring-2'
+                    placeholder={form.fields.message.placeholder}
+                  />
+                </div>
+              </div>
+              <Button
+                type='submit'
+                variant='primary'
+                size='lg'
+                hoverTransition='lift'
+                disabled={isSubmitting}
+                className='w-full md:w-auto'>
+                {isSubmitting ? form.submittingButton : form.submitButton}
+              </Button>
+              {/* Submission Message */}
+              {submitMessage.type && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={`rounded-lg p-4 ${
+                    submitMessage.type === 'success'
+                      ? 'bg-accent/20 text-accent border-accent/30 border'
+                      : 'border border-red-500/30 bg-red-500/20 text-red-400'
+                  }`}>
+                  <p className='text-sm font-medium'>{submitMessage.text}</p>
+                </motion.div>
+              )}
+            </motion.form>
+          </div>
         </div>
       </div>
     </Section>
