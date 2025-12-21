@@ -11,6 +11,8 @@ interface IWebsiteLoaderProps {
 
 const LOGO_ANIMATION_DURATION = 3; // seconds
 const FRAME_ANIMATION_DURATION = 1.2; // seconds
+// Text animation: delay (0.45 + 3) + (9 letters * 0.1s stagger) + last letter duration (0.5s) = 4.75s
+const TEXT_ANIMATION_COMPLETE_TIME = 4.75; // seconds
 
 const WebsiteLoader = ({ children }: IWebsiteLoaderProps) => {
   const lenis = useLenis();
@@ -20,12 +22,13 @@ const WebsiteLoader = ({ children }: IWebsiteLoaderProps) => {
     if (!lenis) return;
     lenis.stop();
 
+    // Wait for text animation to complete before starting frame exit
     const timer = setTimeout(
       () => {
         setShowLoader(false);
         lenis.start();
       },
-      (LOGO_ANIMATION_DURATION + FRAME_ANIMATION_DURATION) * 1000
+      TEXT_ANIMATION_COMPLETE_TIME * 1000
     );
     return () => {
       clearTimeout(timer);

@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 
 /**
  * Default site configuration for metadata
- * Note: metadataBase is set in root layout.tsx, so relative URLs will be automatically resolved
+ * TODO: Add NEXT_PUBLIC_SITE_URL environment variable for production
  */
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || '';
 const DEFAULT_IMAGE = '/assets/hero-image.png';
 const SITE_NAME = 'Fastruct';
 
@@ -23,15 +24,16 @@ export function generateOpenGraphMetadata({
   url?: string;
 }): Metadata['openGraph'] {
   const imageUrl = image || DEFAULT_IMAGE;
+  const absoluteImageUrl = SITE_URL ? `${SITE_URL}${imageUrl}` : imageUrl;
 
   return {
     title,
     description,
-    url: url,
+    url: url ? (SITE_URL ? `${SITE_URL}${url}` : url) : undefined,
     siteName: SITE_NAME,
     images: [
       {
-        url: imageUrl,
+        url: absoluteImageUrl,
         width: 1200,
         height: 630,
         alt: title,
@@ -44,7 +46,6 @@ export function generateOpenGraphMetadata({
 
 /**
  * Generate Twitter Card metadata
- * Uses relative URLs - Next.js will resolve them using metadataBase from root layout
  */
 export function generateTwitterMetadata({
   title,
@@ -56,12 +57,13 @@ export function generateTwitterMetadata({
   image?: string;
 }): Metadata['twitter'] {
   const imageUrl = image || DEFAULT_IMAGE;
+  const absoluteImageUrl = SITE_URL ? `${SITE_URL}${imageUrl}` : imageUrl;
 
   return {
     card: 'summary_large_image',
     title,
     description,
-    images: [imageUrl],
+    images: [absoluteImageUrl],
   };
 }
 
