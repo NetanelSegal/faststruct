@@ -8,7 +8,7 @@ import AnimatedHeading from '@/components/text-animation/AnimatedHeading';
 import FadeInParagraph from '@/components/text-animation/FadeInParagraph';
 import { Button } from '@/components/Button';
 import { IContactForm, IContactInfo } from '@/types/contact';
-import { submitContactForm } from '@/lib/contact-service';
+import { submitContactForm } from '@/services/contact-service';
 
 interface ContactFormSectionProps {
   form: IContactForm;
@@ -47,17 +47,9 @@ const ContactFormSection = ({ form, info }: ContactFormSectionProps) => {
     try {
       const response = await submitContactForm(formData);
 
-      if (response.success) {
-        setSubmitMessage({ type: 'success', text: response.message });
-        setFormData({ name: '', email: '', phone: '', message: '' });
-      } else {
-        setSubmitMessage({ type: 'error', text: response.message });
-      }
-    } catch {
-      setSubmitMessage({
-        type: 'error',
-        text: 'An unexpected error occurred. Please try again later.',
-      });
+      console.log('response from contact form submission: ', response);
+    } catch (error) {
+      console.error('[Contact Form] Error submitting form:', error);
     } finally {
       setIsSubmitting(false);
     }
