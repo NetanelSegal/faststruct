@@ -16,7 +16,7 @@ const HeroModulesSection = ({ hero }: HeroModulesSectionProps) => {
           className='text-h1 font-bebas text-light'
           revealColor='dark'
         />
-        <FadeInParagraph className='text-h6 text-light/80 mx-auto max-w-2xl'>
+        <FadeInParagraph className='text-h6 text-light mx-auto max-w-2xl'>
           {hero.subtitle}
         </FadeInParagraph>
       </div>

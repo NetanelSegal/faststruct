@@ -30,7 +30,7 @@ const HeroAboutSection = ({ title, subtitle, backgroundImage }: IHeroAbout) => {
           alt='About us'
           className='object-cover object-center'
         />
-        <div className='bg-dark/40 absolute inset-0' />
+        <div className='from-dark absolute inset-0 bg-linear-to-t to-transparent to-50%' />
       </div>
 
       {/* Bottom-left text overlay */}
@@ -40,7 +40,7 @@ const HeroAboutSection = ({ title, subtitle, backgroundImage }: IHeroAbout) => {
             text={title}
             className='text-h1 font-bebas tracking-wider'
           />
-          <FadeInParagraph className='text-h6 text-light opacity-70'>
+          <FadeInParagraph className='text-h6 text-light'>
             {subtitle}
           </FadeInParagraph>
         </div>

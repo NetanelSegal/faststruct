@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return generateSocialMetadata({
     title: 'The System | Fastruct',
     description: content.hero.subtitle,
-    image: content.hero.backgroundImage,
+    image: content.hero.backgroundImageDesktop,
     url: '/the-system',
   });
 }

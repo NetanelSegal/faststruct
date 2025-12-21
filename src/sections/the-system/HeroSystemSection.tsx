@@ -5,12 +5,17 @@ import AnimatedHeading from '@/components/text-animation/AnimatedHeading';
 import FadeInParagraph from '@/components/text-animation/FadeInParagraph';
 import { IHeroSystem } from '@/types/theSystem';
 import { useRef } from 'react';
+import { useScreenWidth } from '@/hooks/useScreenWidth';
 
 const HeroSystemSection = ({
   title,
   subtitle,
-  backgroundImage,
+  backgroundImageDesktop,
+  backgroundImageMobile,
 }: IHeroSystem) => {
+  const { screenWidth } = useScreenWidth();
+  const backgroundImage =
+    screenWidth < 768 ? backgroundImageMobile : backgroundImageDesktop;
   const sectionRef = useRef<HTMLElement>(null);
 
   return (
@@ -25,7 +30,7 @@ const HeroSystemSection = ({
           alt='Fastruct factory'
           className='object-cover object-center'
         />
-        <div className='bg-dark/40 absolute inset-0' />
+        <div className='from-dark absolute inset-0 bg-linear-to-t to-transparent to-50%' />
       </div>
 
       {/* Bottom-left text overlay */}
@@ -35,7 +40,7 @@ const HeroSystemSection = ({
             text={title}
             className='text-h1 font-bebas tracking-wider'
           />
-          <FadeInParagraph className='text-h6 text-light opacity-70'>
+          <FadeInParagraph className='text-h6 text-light'>
             {subtitle}
           </FadeInParagraph>
         </div>

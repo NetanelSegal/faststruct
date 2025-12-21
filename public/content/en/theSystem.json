@@ -2,7 +2,8 @@
   "hero": {
     "title": "Build Smarter. Live Better",
     "subtitle": "We've decoded the construction process. By moving production off-site and into the lab, FastStruct delivers precision-engineered homes without the chaos of traditional building",
-    "backgroundImage": "/assets/system-hero-image.png"
+    "backgroundImageDesktop": "/assets/system-hero-image.png",
+    "backgroundImageMobile": "/assets/system-hero-image-mobile.png"
   },
   "twoPaths": {
     "title": "Two Paths. One Standard of Excellence",

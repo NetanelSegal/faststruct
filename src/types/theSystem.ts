@@ -1,7 +1,8 @@
 export interface IHeroSystem {
   title: string;
   subtitle: string;
-  backgroundImage: string;
+  backgroundImageDesktop: string;
+  backgroundImageMobile: string;
 }
 
 export interface IConstructionRoute {

@@ -21,6 +21,8 @@ const ProcessStepContent = ({
   width,
   tranformValue,
 }: IProcessStepContentProps) => {
+  console.log('tranformValue', tranformValue);
+
   return (
     <motion.div
       ref={updateRef}
@@ -36,7 +38,7 @@ const ProcessStepContent = ({
       className='point absolute p-5 text-start text-white md:p-0 md:pr-10'>
       <motion.h2
         style={{
-          rotateY: tranformValue * 15,
+          rotateY: tranformValue,
           transformStyle: 'preserve-3d',
         }}
         className='font-bebas text-h1 text-light'>
@@ -44,7 +46,7 @@ const ProcessStepContent = ({
       </motion.h2>
       <motion.p
         style={{
-          rotateY: tranformValue * 15,
+          rotateY: tranformValue,
           transformStyle: 'preserve-3d',
         }}
         className='font-poppins text-h4'>
