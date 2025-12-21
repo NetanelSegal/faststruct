@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: ModulePageProps) {
   }
 
   return generateSocialMetadata({
-    title: `${module.title} | Fastruct`,
+    title: `${module.title} | Fast struct`,
     description: module.summary,
     image: module.mainImage,
     url: `/module/${slug}`,

@@ -10,7 +10,7 @@ import { generateSocialMetadata } from '@/lib/metadata';
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getContent('modulesPage', 'en');
   return generateSocialMetadata({
-    title: 'Explore Our Modules | Fastruct',
+    title: 'Explore Our Modules | Fast struct',
     description: content.hero.subtitle,
     image: '/assets/hero-image.png',
     url: '/modules',

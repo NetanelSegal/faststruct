@@ -6,9 +6,9 @@ import Page from '@/components/Page';
 import { generateSocialMetadata } from '@/lib/metadata';
 
 export const metadata: Metadata = generateSocialMetadata({
-  title: 'Contact Us | Fastruct',
+  title: 'Contact Us | Fast struct',
   description:
-    'Get in touch with Fastruct to start your modular and panelized construction project. We handle everything from consultation to completion.',
+    'Get in touch with Fast struct to start your modular and panelized construction project. We handle everything from consultation to completion.',
   image: '/assets/hero-image.png',
   url: '/contact',
 });

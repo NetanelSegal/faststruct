@@ -1,10 +1,10 @@
-# Fastruct - Business Website
+# Fast sruct - Business Website
 
-This is the official business website for Fastruct, a modern construction company specializing in modular and panelized building methods.
+This is the official business website for Fast sruct, a modern construction company specializing in modular and panelized building methods.
 
 ## About the Project
 
-This project is a [Next.js](https://nextjs.org/) application built with [TypeScript](https://www.typescriptlang.org/) and styled with [Tailwind CSS](https://tailwindcss.com/). It showcases Fastruct's services, projects, and company information.
+This project is a [Next.js](https://nextjs.org/) application built with [TypeScript](https://www.typescriptlang.org/) and styled with [Tailwind CSS](https://tailwindcss.com/). It showcases Fast sruct's services, projects, and company information.
 
 ## Getting Started
 
@@ -18,7 +18,7 @@ Make sure you have [pnpm](https://pnpm.io/installation) installed.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/fastruct.git
+   git clone https://github.com/your_username_/fast sruct.git
    ```
 2. Install PNPM packages
    ```sh
