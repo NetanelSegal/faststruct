@@ -14,7 +14,7 @@ import { generateSocialMetadata } from '@/lib/metadata';
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getContent('theSystem', 'en');
   return generateSocialMetadata({
-    title: 'The System | Fastruct',
+    title: 'The System | Fast struct',
     description: content.hero.subtitle,
     image: content.hero.backgroundImageDesktop,
     url: '/the-system',

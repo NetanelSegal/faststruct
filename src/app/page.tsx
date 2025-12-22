@@ -16,7 +16,7 @@ import { generateSocialMetadata } from '@/lib/metadata';
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getContent('home', 'en');
   return generateSocialMetadata({
-    title: 'Home | Fastruct',
+    title: 'Home | Fast struct',
     description: content.heroSection.subtitle,
     image: '/assets/hero-image.png',
     url: '/',

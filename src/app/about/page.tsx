@@ -13,7 +13,7 @@ import { generateSocialMetadata } from '@/lib/metadata';
 export async function generateMetadata(): Promise<Metadata> {
   const content = await getContent('about', 'en');
   return generateSocialMetadata({
-    title: 'About Us | Fastruct',
+    title: 'About Us | Fast struct',
     description: content.hero.subtitle,
     image: content.hero.backgroundImage,
     url: '/about',

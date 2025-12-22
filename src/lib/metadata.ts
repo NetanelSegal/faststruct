@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
  */
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || '';
 const DEFAULT_IMAGE = '/assets/hero-image.png';
-const SITE_NAME = 'Fastruct';
+const SITE_NAME = 'Fast struct';
 
 /**
  * Generate Open Graph metadata

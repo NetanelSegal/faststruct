@@ -10,10 +10,9 @@
       "bathrooms": 1,
       "modulesCount": 1
     },
-    "mainImage": "/assets/modules-images/module-1/out-1.jpg",
+    "mainImage": "/assets/modules-images/module-1/out-3.jpg",
     "images": [
       "/assets/modules-images/module-1/out-1.jpg",
-      "/assets/modules-images/module-1/out-2.jpg",
       "/assets/modules-images/module-1/out-3.jpg",
       "/assets/modules-images/module-1/out-4.jpg",
       "/assets/modules-images/all-modules-in-1.jpg",
@@ -36,12 +35,10 @@
       "bathrooms": 1,
       "modulesCount": 1
     },
-    "mainImage": "/assets/modules-images/module-1/out-2.jpg",
+    "mainImage": "/assets/modules-images/module-2/out-2.jpg",
     "images": [
-      "/assets/modules-images/module-1/out-1.jpg",
-      "/assets/modules-images/module-1/out-2.jpg",
-      "/assets/modules-images/module-1/out-3.jpg",
-      "/assets/modules-images/module-1/out-4.jpg",
+      "/assets/modules-images/module-2/out-1.jpg",
+      "/assets/modules-images/module-2/out-2.jpg",
       "/assets/modules-images/all-modules-in-1.jpg",
       "/assets/modules-images/all-modules-in-2.jpg",
       "/assets/modules-images/all-modules-in-3.jpg",
@@ -62,12 +59,8 @@
       "bathrooms": 2,
       "modulesCount": 1
     },
-    "mainImage": "/assets/modules-images/module-1/out-1.jpg",
+    "mainImage": "/assets/modules-images/module-1/out-3.jpg",
     "images": [
-      "/assets/modules-images/module-1/out-1.jpg",
-      "/assets/modules-images/module-1/out-2.jpg",
-      "/assets/modules-images/module-1/out-3.jpg",
-      "/assets/modules-images/module-1/out-4.jpg",
       "/assets/modules-images/all-modules-in-1.jpg",
       "/assets/modules-images/all-modules-in-2.jpg",
       "/assets/modules-images/all-modules-in-3.jpg",
@@ -90,10 +83,6 @@
     },
     "mainImage": "/assets/modules-images/module-1/out-3.jpg",
     "images": [
-      "/assets/modules-images/module-1/out-1.jpg",
-      "/assets/modules-images/module-1/out-2.jpg",
-      "/assets/modules-images/module-1/out-3.jpg",
-      "/assets/modules-images/module-1/out-4.jpg",
       "/assets/modules-images/all-modules-in-1.jpg",
       "/assets/modules-images/all-modules-in-2.jpg",
       "/assets/modules-images/all-modules-in-3.jpg",
@@ -114,12 +103,8 @@
       "bathrooms": 1,
       "modulesCount": 1
     },
-    "mainImage": "/assets/modules-images/module-1/out-2.jpg",
+    "mainImage": "/assets/modules-images/module-1/out-3.jpg",
     "images": [
-      "/assets/modules-images/module-1/out-1.jpg",
-      "/assets/modules-images/module-1/out-2.jpg",
-      "/assets/modules-images/module-1/out-3.jpg",
-      "/assets/modules-images/module-1/out-4.jpg",
       "/assets/modules-images/all-modules-in-1.jpg",
       "/assets/modules-images/all-modules-in-2.jpg",
       "/assets/modules-images/all-modules-in-3.jpg",
@@ -127,6 +112,6 @@
       "/assets/modules-images/all-modules-in-5.jpg",
       "/assets/modules-images/all-modules-in-6.jpg"
     ],
-    "sketchPlans": []
+    "sketchPlans": ["/assets/modules-images/module-5/floor-plan-5.png"]
   }
 ]
