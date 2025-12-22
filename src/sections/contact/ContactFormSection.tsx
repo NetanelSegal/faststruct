@@ -8,7 +8,6 @@ import AnimatedHeading from '@/components/text-animation/AnimatedHeading';
 import FadeInParagraph from '@/components/text-animation/FadeInParagraph';
 import { Button } from '@/components/Button';
 import { IContactForm, IContactInfo } from '@/types/contact';
-import { submitContactForm } from '@/services/contact-service';
 
 interface ContactFormSectionProps {
   form: IContactForm;
@@ -45,7 +44,10 @@ const ContactFormSection = ({ form, info }: ContactFormSectionProps) => {
     setSubmitMessage({ type: null, text: '' });
 
     try {
-      const response = await submitContactForm(formData);
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: JSON.stringify(formData),
+      });
 
       console.log('response from contact form submission: ', response);
     } catch (error) {
