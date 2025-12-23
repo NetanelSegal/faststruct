@@ -21,6 +21,7 @@ const ContactFormSection = ({ form, info }: ContactFormSectionProps) => {
     phone: '',
     message: '',
   });
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState<{
     type: 'success' | 'error' | null;
@@ -36,6 +37,14 @@ const ContactFormSection = ({ form, info }: ContactFormSectionProps) => {
       ...formData,
       [e.target.name]: e.target.value,
     });
+    // Clear error for this field when user types
+    if (fieldErrors[e.target.name]) {
+      setFieldErrors((prev) => {
+        const newErrors = { ...prev };
+        delete newErrors[e.target.name];
+        return newErrors;
+      });
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -46,12 +55,46 @@ const ContactFormSection = ({ form, info }: ContactFormSectionProps) => {
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify(formData),
       });
 
-      console.log('response from contact form submission: ', response);
+      const data = await response.json();
+
+      if (!response.ok) {
+        // Handle validation errors
+        if (data.details && Array.isArray(data.details)) {
+          const errors: Record<string, string> = {};
+          data.details.forEach((detail: { field: string; message: string }) => {
+            errors[detail.field] = detail.message;
+          });
+          setFieldErrors(errors);
+        }
+
+        setSubmitMessage({
+          type: 'error',
+          text: data.error || 'Failed to send message',
+        });
+        return;
+      }
+
+      // Success
+      setSubmitMessage({
+        type: 'success',
+        text: data.message || 'Message sent successfully!',
+      });
+
+      // Reset form
+      setFormData({ name: '', email: '', phone: '', message: '' });
+      setFieldErrors({});
     } catch (error) {
-      console.error('[Contact Form] Error submitting form:', error);
+      // Network error
+      setSubmitMessage({
+        type: 'error',
+        text: 'Network error. Please try again.',
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -187,9 +230,16 @@ const ContactFormSection = ({ form, info }: ContactFormSectionProps) => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className='border-accent/50 bg-light/10 text-light placeholder-accent/70 focus:border-accent focus:ring-accent/50 w-full rounded-lg border p-4 focus:ring-2'
+                    className={`border-accent/50 bg-light/10 text-light placeholder-accent/70 focus:border-accent focus:ring-accent/50 w-full rounded-lg border p-4 focus:ring-2 ${
+                      fieldErrors.name ? 'border-red-500/50' : ''
+                    }`}
                     placeholder={form.fields.name.placeholder}
                   />
+                  {fieldErrors.name && (
+                    <p className='mt-1 text-sm text-red-400'>
+                      {fieldErrors.name}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <label
@@ -204,9 +254,16 @@ const ContactFormSection = ({ form, info }: ContactFormSectionProps) => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className='border-accent/50 bg-light/10 text-light placeholder-accent/70 focus:border-accent focus:ring-accent/50 w-full rounded-lg border p-4 focus:ring-2'
+                    className={`border-accent/50 bg-light/10 text-light placeholder-accent/70 focus:border-accent focus:ring-accent/50 w-full rounded-lg border p-4 focus:ring-2 ${
+                      fieldErrors.email ? 'border-red-500/50' : ''
+                    }`}
                     placeholder={form.fields.email.placeholder}
                   />
+                  {fieldErrors.email && (
+                    <p className='mt-1 text-sm text-red-400'>
+                      {fieldErrors.email}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <label
@@ -220,9 +277,17 @@ const ContactFormSection = ({ form, info }: ContactFormSectionProps) => {
                     name='phone'
                     value={formData.phone}
                     onChange={handleChange}
-                    className='border-accent/50 bg-light/10 text-light placeholder-accent/70 focus:border-accent focus:ring-accent/50 w-full rounded-lg border p-4 focus:ring-2'
+                    required
+                    className={`border-accent/50 bg-light/10 text-light placeholder-accent/70 focus:border-accent focus:ring-accent/50 w-full rounded-lg border p-4 focus:ring-2 ${
+                      fieldErrors.phone ? 'border-red-500/50' : ''
+                    }`}
                     placeholder={form.fields.phone.placeholder}
                   />
+                  {fieldErrors.phone && (
+                    <p className='mt-1 text-sm text-red-400'>
+                      {fieldErrors.phone}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <label
@@ -237,9 +302,16 @@ const ContactFormSection = ({ form, info }: ContactFormSectionProps) => {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className='border-accent/50 bg-light/10 text-light placeholder-accent/70 focus:border-accent focus:ring-accent/50 w-full resize-none rounded-lg border p-4 focus:ring-2'
+                    className={`border-accent/50 bg-light/10 text-light placeholder-accent/70 focus:border-accent focus:ring-accent/50 w-full resize-none rounded-lg border p-4 focus:ring-2 ${
+                      fieldErrors.message ? 'border-red-500/50' : ''
+                    }`}
                     placeholder={form.fields.message.placeholder}
                   />
+                  {fieldErrors.message && (
+                    <p className='mt-1 text-sm text-red-400'>
+                      {fieldErrors.message}
+                    </p>
+                  )}
                 </div>
               </div>
               <Button
