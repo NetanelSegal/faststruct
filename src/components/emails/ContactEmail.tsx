@@ -7,7 +7,10 @@ import {
   Text,
   Heading,
   Hr,
+  Img,
 } from '@react-email/components';
+import CSSConstants from '@/lib/css-constants';
+import { env } from '@/lib/env';
 
 interface ContactEmailProps {
   name: string;
@@ -27,6 +30,23 @@ export default function ContactEmail({
       <Head />
       <Body style={main}>
         <Container style={container}>
+          {/* Logo Section */}
+          <Section style={logoSection}>
+            <Img
+              src={
+                env.siteUrl
+                  ? `${env.siteUrl}/assets/logo/logo-full.svg`
+                  : 'https://fastruct.com/assets/logo/logo-full.svg'
+              }
+              alt='Fastruct Logo'
+              width='200'
+              height='auto'
+              style={logo}
+            />
+          </Section>
+
+          <Hr style={hr} />
+
           <Heading style={h1}>New Contact Form Submission</Heading>
           <Text style={intro}>
             You have received a new message from your website contact form.
@@ -73,42 +93,68 @@ export default function ContactEmail({
   );
 }
 
+// Import colors from CSSConstants
+const colors = CSSConstants.colors;
+
+// Fonts (matching website)
+const fonts = {
+  poppins:
+    'Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif',
+  bebas: 'Bebas Neue, "Arial Black", sans-serif',
+};
+
 // Styles
 const main = {
-  backgroundColor: '#f6f9fc',
-  fontFamily:
-    '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif',
+  backgroundColor: colors.light,
+  fontFamily: fonts.poppins,
 };
 
 const container = {
-  backgroundColor: '#ffffff',
+  backgroundColor: colors.white,
   margin: '0 auto',
-  padding: '20px 0 48px',
+  padding: '0',
   marginBottom: '64px',
   borderRadius: '8px',
-  boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+  boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+  maxWidth: '600px',
+};
+
+const logoSection = {
+  padding: '32px 48px',
+  backgroundColor: colors.dark,
+  borderRadius: '8px 8px 0 0',
+  textAlign: 'center' as const,
+};
+
+const logo = {
+  margin: '0 auto',
+  display: 'block',
 };
 
 const h1 = {
-  color: '#333',
-  fontSize: '24px',
+  color: colors.dark,
+  fontSize: '28px',
   fontWeight: 'bold',
-  margin: '40px 0',
+  fontFamily: fonts.bebas,
+  margin: '40px 48px 16px',
   padding: '0',
   textAlign: 'center' as const,
+  textTransform: 'uppercase' as const,
+  letterSpacing: '0.02em',
 };
 
 const intro = {
   color: '#666',
   fontSize: '16px',
   lineHeight: '24px',
-  margin: '0 0 24px 0',
+  margin: '0 48px 32px',
   textAlign: 'center' as const,
-  padding: '0 48px',
+  fontFamily: fonts.poppins,
 };
 
 const hr = {
-  borderColor: '#e6ebf1',
+  borderColor: colors.accent + '40',
+  borderWidth: '1px',
   margin: '32px 0',
 };
 
@@ -118,36 +164,38 @@ const section = {
 };
 
 const label = {
-  color: '#666',
-  fontSize: '14px',
+  color: colors.dark,
+  fontSize: '12px',
   fontWeight: 'bold',
   margin: '0 0 8px 0',
   textTransform: 'uppercase' as const,
-  letterSpacing: '0.5px',
+  letterSpacing: '1px',
+  fontFamily: fonts.poppins,
 };
 
 const value = {
-  color: '#333',
+  color: colors.dark,
   fontSize: '16px',
   margin: '0',
   lineHeight: '24px',
+  fontFamily: fonts.poppins,
 };
 
 const link = {
-  color: '#0066cc',
   textDecoration: 'none',
 };
 
 const messageText = {
-  color: '#333',
+  color: colors.dark,
   fontSize: '16px',
   margin: '0',
   lineHeight: '24px',
   whiteSpace: 'pre-wrap' as const,
-  backgroundColor: '#f8f9fa',
+  backgroundColor: colors.light + '40',
   padding: '16px',
   borderRadius: '4px',
-  border: '1px solid #e6ebf1',
+  border: `1px solid ${colors.accent}40`,
+  fontFamily: fonts.poppins,
 };
 
 const footer = {
@@ -155,5 +203,6 @@ const footer = {
   fontSize: '12px',
   textAlign: 'center' as const,
   marginTop: '32px',
-  padding: '0 48px',
+  padding: '0 48px 32px',
+  fontFamily: fonts.poppins,
 };

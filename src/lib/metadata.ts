@@ -1,17 +1,9 @@
 import type { Metadata } from 'next';
+import { env } from './env';
 
-/**
- * Default site configuration for metadata
- * TODO: Add NEXT_PUBLIC_SITE_URL environment variable for production
- */
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || '';
 const DEFAULT_IMAGE = '/assets/hero-image.png';
 const SITE_NAME = 'Fast struct';
 
-/**
- * Generate Open Graph metadata
- * Uses relative URLs - Next.js will resolve them using metadataBase from root layout
- */
 export function generateOpenGraphMetadata({
   title,
   description,
@@ -24,12 +16,12 @@ export function generateOpenGraphMetadata({
   url?: string;
 }): Metadata['openGraph'] {
   const imageUrl = image || DEFAULT_IMAGE;
-  const absoluteImageUrl = SITE_URL ? `${SITE_URL}${imageUrl}` : imageUrl;
+  const absoluteImageUrl = env.siteUrl ? `${env.siteUrl}${imageUrl}` : imageUrl;
 
   return {
     title,
     description,
-    url: url ? (SITE_URL ? `${SITE_URL}${url}` : url) : undefined,
+    url: url ? (env.siteUrl ? `${env.siteUrl}${url}` : url) : undefined,
     siteName: SITE_NAME,
     images: [
       {
@@ -44,9 +36,6 @@ export function generateOpenGraphMetadata({
   };
 }
 
-/**
- * Generate Twitter Card metadata
- */
 export function generateTwitterMetadata({
   title,
   description,
@@ -57,7 +46,7 @@ export function generateTwitterMetadata({
   image?: string;
 }): Metadata['twitter'] {
   const imageUrl = image || DEFAULT_IMAGE;
-  const absoluteImageUrl = SITE_URL ? `${SITE_URL}${imageUrl}` : imageUrl;
+  const absoluteImageUrl = env.siteUrl ? `${env.siteUrl}${imageUrl}` : imageUrl;
 
   return {
     card: 'summary_large_image',
@@ -67,9 +56,6 @@ export function generateTwitterMetadata({
   };
 }
 
-/**
- * Generate complete metadata with Open Graph and Twitter Cards
- */
 export function generateSocialMetadata({
   title,
   description,
