@@ -2,6 +2,7 @@ import AnimatedHeading from '../text-animation/AnimatedHeading';
 import { ENABLED_ROUTES } from '@/lib/routes';
 import { IContactInfo, IContactSocial } from '@/types/contact';
 import NavLink from '../navigation/NavLink';
+import { ReactNode } from 'react';
 
 const LetsBuildTogetherCTA = () => {
   return (
@@ -21,6 +22,36 @@ const LetsBuildTogetherCTA = () => {
   );
 };
 
+interface FooterSectionProps {
+  title: string;
+  children: ReactNode;
+  className?: string;
+  isLast?: boolean;
+}
+
+const FooterSection = ({
+  title,
+  children,
+  className = '',
+  isLast = false,
+}: FooterSectionProps) => {
+  return (
+    <div
+      className={`border-light flex flex-col gap-1 border-b-2 pb-4 ${!isLast ? 'md:border-r-2 md:pr-4' : ''} md:border-b-0 ${className}`}>
+      <h3 className='font-semibold'>{title}</h3>
+      {children}
+    </div>
+  );
+};
+
+interface FooterListProps {
+  children: ReactNode;
+}
+
+const FooterList = ({ children }: FooterListProps) => {
+  return <ul className='mt-2 space-y-2 text-sm'>{children}</ul>;
+};
+
 interface FooterLinksAndContactProps {
   info: IContactInfo;
   social: IContactSocial;
@@ -33,9 +64,8 @@ const FooterLinksAndContact = ({
   const footerLinks = ENABLED_ROUTES.filter((route) => !route.isButton);
   return (
     <div className='flex w-full flex-col gap-4 md:w-auto md:flex-row'>
-      <div className='border-light flex flex-col gap-1 border-b-2 pb-4 md:border-r-2 md:border-b-0 md:pr-4'>
-        <h3 className='font-semibold'>Company</h3>
-        <ul className='mt-2 space-y-2 text-sm'>
+      <FooterSection title='Company'>
+        <FooterList>
           {footerLinks.map((route) => (
             <li key={route.href}>
               <NavLink href={route.href} style={false}>
@@ -43,13 +73,11 @@ const FooterLinksAndContact = ({
               </NavLink>
             </li>
           ))}
-        </ul>
-      </div>
+        </FooterList>
+      </FooterSection>
 
-      {/* Contact Information */}
-      <div className='border-light flex flex-col gap-1 border-b-2 pb-4 md:border-r-2 md:border-b-0 md:pr-4'>
-        <h3 className='font-semibold'>Contact</h3>
-        <ul className='mt-2 space-y-2 text-sm'>
+      <FooterSection title='Contact'>
+        <FooterList>
           <li>{info.address.street}</li>
           <li>{info.address.city}</li>
           <li>
@@ -66,24 +94,24 @@ const FooterLinksAndContact = ({
               {info.phone.display}
             </a>
           </li>
-        </ul>
-      </div>
+        </FooterList>
+      </FooterSection>
 
-      {/* Social Media */}
-      <div className='flex flex-col gap-1 pb-4'>
-        <h3 className='font-semibold'>{social.title}</h3>
-        <ul className='mt-2 space-y-2 text-sm'>
-          {social.links.map((link) => (
-            <li key={link.name}>
-              <a
-                href={link.url}
-                className='hover:text-accent transition-colors'>
-                {link.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
+      {social.links.length > 0 && (
+        <FooterSection title={social.title} isLast={true}>
+          <FooterList>
+            {social.links.map((link) => (
+              <li key={link.name}>
+                <a
+                  href={link.url}
+                  className='hover:text-accent transition-colors'>
+                  {link.name}
+                </a>
+              </li>
+            ))}
+          </FooterList>
+        </FooterSection>
+      )}
     </div>
   );
 };

@@ -41,19 +41,6 @@
   },
   "social": {
     "title": "Follow Us",
-    "links": [
-      {
-        "name": "LinkedIn",
-        "url": "#"
-      },
-      {
-        "name": "Facebook",
-        "url": "#"
-      },
-      {
-        "name": "Instagram",
-        "url": "#"
-      }
-    ]
+    "links": []
   }
 }

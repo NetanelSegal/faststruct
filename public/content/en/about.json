@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": "Our Mission: Precision. Speed. Trust.",
-    "subtitle": "A compact and elegant unit ideal for guest homes, ADUs, or urban lots.",
+    "subtitle": "We're revolutionizing construction through precision engineering and innovative modular solutions.",
     "backgroundImage": "/assets/intro-image.jpg",
     "bigTextLine1": "Where Innovation"
   },
@@ -17,22 +17,22 @@
     "items": [
       {
         "title": "Speed without Compromise",
-        "text": "faster delivery, no corners cut.",
+        "text": "Faster delivery, no corners cut.",
         "imageUrl": "/assets/features-image-1.jpg"
       },
       {
         "title": "Simplicity in Every Step",
-        "text": "clear guided process.",
+        "text": "Clear guided process.",
         "imageUrl": "/assets/features-image-2.jpg"
       },
       {
         "title": "Enduring Quality",
-        "text": "premium materials, modular engineering.",
+        "text": "Premium materials, modular engineering.",
         "imageUrl": "/assets/features-image-3.jpg"
       },
       {
         "title": "Personal Support",
-        "text": "team guidance every step.",
+        "text": "Team guidance every step.",
         "imageUrl": "/assets/features-image-4.jpg"
       }
     ]
