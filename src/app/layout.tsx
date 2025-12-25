@@ -24,7 +24,7 @@ const fontBebasNeue = Bebas_Neue({
 
 export const metadata: Metadata = {
   ...generateSocialMetadata({
-    title: 'Fast struct',
+    title: 'Fast Struct',
     description: 'Modular + Panelized construction, done right.',
   }),
 };

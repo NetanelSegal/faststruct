@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { env } from './env';
 
 const DEFAULT_IMAGE = '/assets/hero-image.png';
-const SITE_NAME = 'Fast struct';
+const SITE_NAME = 'Fast Struct';
 
 export function generateOpenGraphMetadata({
   title,

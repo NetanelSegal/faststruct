@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": "Build Smarter. Live Better",
-    "subtitle": "We've decoded the construction process. By moving production off-site and into the lab, FastStruct delivers precision-engineered homes without the chaos of traditional building",
+    "subtitle": "We've decoded the construction process. By moving production off-site and into the lab, Fast Struct delivers precision-engineered homes without the chaos of traditional building",
     "backgroundImageDesktop": "/assets/system-hero-image.png",
     "backgroundImageMobile": "/assets/system-hero-image-mobile.png"
   },
@@ -53,7 +53,7 @@
         "icon": "stack-boxes",
         "subtitle": "Faster ROI & Consistent Quality",
         "title": "Precision at Scale",
-        "description": "For developers, time is ROI. FastStruct streamlines the path from permit to occupancy. We replicate high-quality units with millimeter accuracy, significantly shortening project timelines and reducing on-site management overhead"
+        "description": "For developers, time is ROI. Fast Struct streamlines the path from permit to occupancy. As a licensed contractor with complete A-Z solutions, we replicate high-quality units with millimeter accuracy, significantly shortening project timelines and reducing on-site management overhead"
       }
     ]
   },

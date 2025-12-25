@@ -7,11 +7,11 @@
   },
   "about": {
     "bigTextLine2": "Meets Home",
-    "paragraph": "Fast struct began with a simple idea - to remove the friction from building your dream home. Traditional construction is slow, unpredictable, and overwhelming. We created a smarter way - one that puts speed, quality, and clarity first."
+    "paragraph": "Fast Struct began with a simple idea - to remove the friction from building your dream home. Traditional construction is slow, unpredictable, and overwhelming. We created a smarter way - one that puts speed, quality, and clarity first."
   },
   "imageText": {
     "image": "/assets/intro-image.jpg",
-    "paragraph": "By combining modular and panelized construction, we bring together speed, flexibility, and quality. Every client gets a dedicated project manager, and our team handles everything from permits to final delivery."
+    "paragraph": "By combining modular and panelized construction, we bring together speed, flexibility, and quality. As a licensed contractor with a state-approved manufacturing facility, we provide complete A-Z solutions. Every client gets a dedicated project manager, and our team handles everything from permits to final delivery."
   },
   "featuresGrid": {
     "items": [
@@ -43,7 +43,7 @@
       {
         "name": "Sarah Johnson",
         "role": "CEO & Founder",
-        "bio": "With over 15 years in construction and modular building, Sarah leads FastStruct with a vision to revolutionize home building.",
+        "bio": "With over 15 years in construction and modular building, Sarah leads Fast Struct with a vision to revolutionize home building.",
         "imageUrl": "/assets/team-member-1.jpg"
       },
       {
