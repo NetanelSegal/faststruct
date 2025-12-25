@@ -1,9 +1,10 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { env } from './lib/env';
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  const isComingSoonEnabled = process.env.ENABLE_COMING_SOON === 'true';
+  const isComingSoonEnabled = env.enableComingSoon;
 
   // If coming soon is enabled and user is not already on coming-soon page, redirect
   if (isComingSoonEnabled && pathname !== '/coming-soon') {
@@ -26,4 +27,3 @@ export const config = {
     '/((?!api|_next/static|_next/image|favicon.ico|assets).*)',
   ],
 };
-
