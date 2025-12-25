@@ -49,6 +49,7 @@ export interface ITestimonial {
 
 export interface ICTA {
   title: string;
+  subtitle: string;
 }
 
 export interface IHomeContent {

@@ -93,7 +93,7 @@ const TestimonialCarousel = ({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.5 }}
                 className='font-poppins text-light/80 mt-6 text-sm italic md:text-base'>
-                — {currentTestimonial.author}
+                - {currentTestimonial.author}
               </motion.p>
             </blockquote>
           </motion.div>

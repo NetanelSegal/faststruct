@@ -1,9 +1,13 @@
+'use client';
+
 import { Section } from '@/components/Section';
 import { IModule } from '@/types/modules';
 import AnimatedHeading from '@/components/text-animation/AnimatedHeading';
 import FadeInParagraph from '@/components/text-animation/FadeInParagraph';
 import ModuleList from './components/ModuleList';
 import { IExplore } from '@/types/product';
+import NavLink from '@/components/navigation/NavLink';
+import { motion } from 'motion/react';
 
 interface IExploreHomesSectionProps {
   featuredModules: IModule[];
@@ -34,6 +38,19 @@ const ExploreHomesSection = ({
           </FadeInParagraph>
         </div>
         <ModuleList modules={featuredModules} />
+
+        {/* CTA Button */}
+        <div className='mt-8 flex justify-center'>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+            viewport={{ amount: 0.5, once: true }}>
+            <NavLink button={true} href='/modules'>
+              View All Modules
+            </NavLink>
+          </motion.div>
+        </div>
       </div>
     </Section>
   );

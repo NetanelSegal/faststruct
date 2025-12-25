@@ -2,16 +2,16 @@
   "heroSection": {
     "title": "BUILD",
     "animatedWords": ["Faster", "Smarter", "For Life"],
-    "subtitle": "Fast Struct delivers modular and panelized buildings designed to fit your needs - from consultation to completion."
+    "subtitle": "Fast Struct delivers modular and panelized buildings in California designed to fit your needs - from consultation to completion."
   },
   "intro": {
-    "text": "Fast Struct is redefining how homes and spaces are built. By combining modular and panelized construction, we deliver faster timelines, higher quality, and a smoother experience from start to finish."
+    "text": "Fast Struct is redefining how homes and spaces are built in California. By combining modular and panelized construction, we deliver faster timelines, higher quality, and a smoother experience from start to finish. Whether you're building an ADU, a custom modular home, or a panelized structure, we've got you covered."
   },
   "features": [
     {
       "iconClass": "fas fa-bolt",
       "title": "Speed",
-      "text": "Your project ready in months, not years.",
+      "text": "3-5 months from permit approval to completion.",
       "imageUrl": "/assets/features-image-1.jpg"
     },
     {
@@ -23,7 +23,7 @@
     {
       "iconClass": "fas fa-infinity",
       "title": "End-to-End",
-      "text": "Permits, design, construction, and handover.",
+      "text": "Complete A-Z solutions: Permits, design, construction, and handover.",
       "imageUrl": "/assets/features-image-3.jpg"
     },
     {
@@ -40,7 +40,7 @@
     },
     {
       "title": "500+ Projects",
-      "text": "Across California - from guest units to full-scale residential and commercial builds."
+      "text": "Across California - from ADUs and guest units to full-scale residential and commercial modular construction projects."
     },
     {
       "title": "3-5 Months",
@@ -51,7 +51,7 @@
     "modular": {
       "title": "Modular",
       "items": [
-        "Factory-built precision modules",
+        "Factory-built precision modules for modular homes and ADUs",
         "Faster timelines (up to 50% quicker)",
         "Consistent quality control in a controlled environment",
         "Minimal disruption on-site"
@@ -79,14 +79,15 @@
     }
   },
   "cta": {
-    "title": "Want to build with us?"
+    "title": "Ready to Build Your Dream Home?",
+    "subtitle": "Get a free consultation and see how we can bring your vision to life in 3-5 months."
   },
   "faq": {
     "title": "Frequently Asked Questions",
     "items": [
       {
-        "question": "Is modular or panelized construction more expensive than traditional building?",
-        "answer": "Not necessarily. Faster timelines and efficient processes often lower overall costs with complete transparency from the start."
+        "question": "Is modular or panelized construction in California more expensive than traditional building?",
+        "answer": "Not necessarily. Our modular and panelized construction methods in California offer faster timelines and efficient processes that often lower overall costs with complete transparency from the start."
       },
       {
         "question": "Will my home look like a “prefab box”?",

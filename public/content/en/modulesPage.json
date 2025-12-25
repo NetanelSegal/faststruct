@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": "EXPLORE OUR MODULES",
-    "subtitle": "Discover modular homes designed for your lifestyle, from compact ADUs to spacious family units."
+    "subtitle": "Discover modular homes in California designed for your lifestyle, from compact ADUs to spacious family units."
   },
   "filters": {
     "bedrooms": {
@@ -82,4 +82,3 @@
     "ariaLabel": "Clear all active filters"
   }
 }
-

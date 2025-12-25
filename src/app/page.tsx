@@ -43,7 +43,7 @@ const HomePage = async () => {
       <ExperienceSection experienceData={content.experienceMetrics} />
 
       {/* CTA Section */}
-      <CTASection title={content.cta.title} />
+      <CTASection {...content.cta} />
 
       {/* Explore Homes Section */}
       <ExploreHomesSection featuredModules={modulesData} />

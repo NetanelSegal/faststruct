@@ -42,7 +42,7 @@ const WhyModularPanelizedSection: React.FC<IWhyModularPanelized> = ({
             animate={{ opacity: 0.2 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
-            className='fixed top-0 size-full h-screen w-full -translate-x-1/4'>
+            className='fixed top-0 z-0 size-full h-screen w-full -translate-x-1/4'>
             <Image
               src={
                 categories[activeCategoryIndex]?.image || categories[0].image
@@ -65,6 +65,7 @@ const WhyModularPanelizedSection: React.FC<IWhyModularPanelized> = ({
                 prev.map((value, i) => (i === index ? isInView : value))
               )
             }
+            hasCTA={index === categories.length - 1}
           />
         ))}
       </div>

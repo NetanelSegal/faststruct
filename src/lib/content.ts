@@ -26,5 +26,7 @@ export async function getContent<K extends ContentKey>(
 import { IModule } from '@/types/modules';
 
 export const getModules = async (lang: Language = 'en'): Promise<IModule[]> => {
-  return getContent('modules', lang);
+  return (await getContent('modules', lang)).sort(
+    (a, b) => b.specs.areaSqft - a.specs.areaSqft
+  );
 };

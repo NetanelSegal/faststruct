@@ -6,6 +6,8 @@ import AnimatedHeading from '@/components/text-animation/AnimatedHeading';
 import { useScreenWidth } from '@/hooks/useScreenWidth';
 import { IExperienceMetric } from '@/types/home';
 import { Fragment, useLayoutEffect, useRef, useState } from 'react';
+import NavLink from '@/components/navigation/NavLink';
+import { motion } from 'motion/react';
 
 const HEADING_TOP = 112; // px
 
@@ -53,6 +55,7 @@ const ExperienceSection: React.FC<{ experienceData: IExperienceMetric[] }> = ({
       {experienceData.map((item, index) => (
         <Fragment key={`ExperienceCard-${index}`}>
           <ExperienceCard
+            hasCTA={index === experienceData.length - 1}
             top={
               HEADING_TOP +
               headingHeight +
@@ -65,6 +68,7 @@ const ExperienceSection: React.FC<{ experienceData: IExperienceMetric[] }> = ({
               (cardsRefs.current[index] = el)
             }
           />
+
           <div className='h-72' />
         </Fragment>
       ))}
