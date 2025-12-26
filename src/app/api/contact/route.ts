@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
         phone,
         message,
       }),
-      replyTo: env.fromEmail,
+      replyTo: email,
     });
 
     if (emailResult.error) {
