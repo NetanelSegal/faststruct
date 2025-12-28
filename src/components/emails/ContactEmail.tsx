@@ -10,7 +10,6 @@ import {
   Img,
 } from '@react-email/components';
 import CSSConstants from '@/lib/css-constants';
-import { env } from '@/lib/env';
 
 interface ContactEmailProps {
   name: string;
@@ -33,11 +32,7 @@ export default function ContactEmail({
           {/* Logo Section */}
           <Section style={logoSection}>
             <Img
-              src={
-                env.siteUrl
-                  ? `${env.siteUrl}/assets/logo/logo-full.svg`
-                  : 'https://fastruct.com/assets/logo/logo-full.svg'
-              }
+              src='cid:logo-image'
               alt='Fastruct Logo'
               width='200'
               height='auto'
