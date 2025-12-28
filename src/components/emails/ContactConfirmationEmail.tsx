@@ -10,6 +10,7 @@ import {
   Img,
 } from '@react-email/components';
 import CSSConstants from '@/lib/css-constants';
+import { env } from '@/lib/env';
 
 interface ContactConfirmationEmailProps {
   name: string;
@@ -26,7 +27,7 @@ export default function ContactConfirmationEmail({
           {/* Logo Section */}
           <Section style={logoSection}>
             <Img
-              src='cid:logo-image'
+              src={`${env.siteUrl}/assets/logo/logo-full.png`}
               alt='Fastruct Logo'
               width='200'
               height='auto'

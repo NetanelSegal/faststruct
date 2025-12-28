@@ -43,13 +43,6 @@ export async function POST(request: NextRequest) {
         message,
       }),
       replyTo: email,
-      attachments: [
-        {
-          path: `${env.siteUrl}/assets/logo/logo-full.svg`,
-          filename: 'logo-full.svg',
-          contentId: 'logo-image',
-        },
-      ],
     });
 
     if (emailResult.error) {
@@ -74,13 +67,6 @@ export async function POST(request: NextRequest) {
         react: ContactConfirmationEmail({
           name,
         }),
-        attachments: [
-          {
-            path: `${env.siteUrl}/assets/logo/logo-full.svg`,
-            filename: 'logo-full.svg',
-            contentId: 'logo-image',
-          },
-        ],
       });
 
       if (confirmationResult.error) {
