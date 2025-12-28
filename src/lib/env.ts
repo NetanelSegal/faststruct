@@ -4,6 +4,7 @@ export const env = {
   contactEmail: process.env.CONTACT_EMAIL ?? '',
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
   enableComingSoon: process.env.ENABLE_COMING_SOON === 'true',
+  googleSheetsUrl: process.env.GOOGLE_SHEETS_URL ?? '',
 } as const;
 
 export type Env = typeof env;
