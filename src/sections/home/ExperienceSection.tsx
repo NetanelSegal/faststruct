@@ -6,10 +6,8 @@ import AnimatedHeading from '@/components/text-animation/AnimatedHeading';
 import { useScreenWidth } from '@/hooks/useScreenWidth';
 import { IExperienceMetric } from '@/types/home';
 import { Fragment, useLayoutEffect, useRef, useState } from 'react';
-import NavLink from '@/components/navigation/NavLink';
-import { motion } from 'motion/react';
 
-const HEADING_TOP = 112; // px
+const HEADING_TOP = 12; // px
 
 const ExperienceSection: React.FC<{ experienceData: IExperienceMetric[] }> = ({
   experienceData,
@@ -38,7 +36,7 @@ const ExperienceSection: React.FC<{ experienceData: IExperienceMetric[] }> = ({
       {/* Sticky heading */}
       <div
         style={{ top: `${HEADING_TOP}px` }}
-        className={`sticky bg-white pb-6 text-center`}>
+        className={`bg-white pb-6 text-center`}>
         <AnimatedHeading
           text='Our Experience'
           className='text-h2 font-bebas text-dark'

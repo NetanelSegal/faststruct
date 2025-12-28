@@ -12,19 +12,13 @@ import {
 import CSSConstants from '@/lib/css-constants';
 import { env } from '@/lib/env';
 
-interface ContactEmailProps {
+interface ContactConfirmationEmailProps {
   name: string;
-  email: string;
-  phone: string;
-  message: string;
 }
 
-export default function ContactEmail({
+export default function ContactConfirmationEmail({
   name,
-  email,
-  phone,
-  message,
-}: ContactEmailProps) {
+}: ContactConfirmationEmailProps) {
   return (
     <Html>
       <Head />
@@ -47,45 +41,22 @@ export default function ContactEmail({
 
           <Hr style={hr} />
 
-          <Heading style={h1}>New Contact Form Submission</Heading>
-          <Text style={intro}>
-            You have received a new message from your website contact form.
+          <Heading style={h1}>Thank You for Contacting Us</Heading>
+          <Text style={intro}>Hi {name},</Text>
+          <Text style={message}>
+            Thank you for reaching out to Fast Struct. We have received your
+            message and will get back to you soon.
+          </Text>
+          <Text style={message}>
+            Our team is committed to providing you with the best service, and we
+            appreciate you taking the time to contact us.
           </Text>
 
           <Hr style={hr} />
 
-          <Section style={section}>
-            <Text style={label}>Name:</Text>
-            <Text style={value}>{name}</Text>
-          </Section>
-
-          <Section style={section}>
-            <Text style={label}>Email:</Text>
-            <Text style={value}>
-              <a href={`mailto:${email}`} style={link}>
-                {email}
-              </a>
-            </Text>
-          </Section>
-
-          <Section style={section}>
-            <Text style={label}>Phone:</Text>
-            <Text style={value}>
-              <a href={`tel:${phone}`} style={link}>
-                {phone}
-              </a>
-            </Text>
-          </Section>
-
-          <Section style={section}>
-            <Text style={label}>Message:</Text>
-            <Text style={messageText}>{message}</Text>
-          </Section>
-
-          <Hr style={hr} />
-
           <Text style={footer}>
-            This email was sent from your website contact form.
+            This is an automated confirmation email. Please do not reply to this
+            message.
           </Text>
         </Container>
       </Body>
@@ -143,11 +114,19 @@ const h1 = {
 };
 
 const intro = {
+  color: colors.dark,
+  fontSize: '18px',
+  lineHeight: '24px',
+  margin: '0 48px 16px',
+  fontFamily: fonts.poppins,
+  fontWeight: '500',
+};
+
+const message = {
   color: '#666',
   fontSize: '16px',
   lineHeight: '24px',
-  margin: '0 48px 32px',
-  textAlign: 'center' as const,
+  margin: '0 48px 16px',
   fontFamily: fonts.poppins,
 };
 
@@ -155,46 +134,6 @@ const hr = {
   borderColor: colors.accent + '40',
   borderWidth: '1px',
   margin: '32px 0',
-};
-
-const section = {
-  padding: '0 48px',
-  marginBottom: '24px',
-};
-
-const label = {
-  color: colors.dark,
-  fontSize: '12px',
-  fontWeight: 'bold',
-  margin: '0 0 8px 0',
-  textTransform: 'uppercase' as const,
-  letterSpacing: '1px',
-  fontFamily: fonts.poppins,
-};
-
-const value = {
-  color: colors.dark,
-  fontSize: '16px',
-  margin: '0',
-  lineHeight: '24px',
-  fontFamily: fonts.poppins,
-};
-
-const link = {
-  textDecoration: 'none',
-};
-
-const messageText = {
-  color: colors.dark,
-  fontSize: '16px',
-  margin: '0',
-  lineHeight: '24px',
-  whiteSpace: 'pre-wrap' as const,
-  backgroundColor: colors.light + '40',
-  padding: '16px',
-  borderRadius: '4px',
-  border: `1px solid ${colors.accent}40`,
-  fontFamily: fonts.poppins,
 };
 
 const footer = {
