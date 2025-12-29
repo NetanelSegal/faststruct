@@ -33,7 +33,7 @@ const TheSystemPage = async () => {
     <Page className='bg-dark'>
       <HeroSystemSection {...content.hero} />
       <TwoPathsSection twoPaths={content.twoPaths} />
-      <NineCoreSystemSection nineCoreSystem={content.nineCoreSystem} />
+      {/* <NineCoreSystemSection nineCoreSystem={content.nineCoreSystem} /> */}
       <ScalableSolutionsSection scalableSolutions={content.scalableSolutions} />
       <CustomizationSection customization={content.customization} />
       <OurProcessSection {...processContent} />

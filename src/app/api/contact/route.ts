@@ -4,6 +4,7 @@ import { Resend } from 'resend';
 import ContactEmail from '@/components/emails/ContactEmail';
 import ContactConfirmationEmail from '@/components/emails/ContactConfirmationEmail';
 import { env } from '@/lib/env';
+import { addToGoogleSheets } from '@/lib/google-sheets';
 
 const resend = new Resend(env.resendApiKey);
 
@@ -57,6 +58,24 @@ export async function POST(request: NextRequest) {
       '[Contact API] Email sent successfully to business owner:',
       emailResult.data
     );
+
+    // Add to Google Sheets (non-blocking - don't fail if this fails)
+    try {
+      await addToGoogleSheets({
+        name,
+        email,
+        phone,
+        message,
+        status: 'Pending',
+      });
+      console.log('[Contact API] Successfully added to Google Sheets');
+    } catch (sheetsError) {
+      console.error(
+        '[Contact API] Error adding to Google Sheets:',
+        sheetsError
+      );
+      // Don't fail the request - the email was sent successfully
+    }
 
     // Send confirmation email to user
     try {
