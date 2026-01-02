@@ -180,7 +180,15 @@ const ContactFormSection = ({ form, info }: ContactFormSectionProps) => {
                   <h4 className='text-h5 font-bebas text-light mb-1'>
                     License
                   </h4>
-                  <p className='text-h6 text-light/80'>{info.license}</p>
+                  <div className='flex flex-col gap-1'>
+                    {info.license.map((license, index) => (
+                      <p
+                        key={index}
+                        className='text-h6 text-light/80 whitespace-nowrap'>
+                        {license}
+                      </p>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
