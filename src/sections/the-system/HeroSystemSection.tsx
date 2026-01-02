@@ -27,7 +27,7 @@ const HeroSystemSection = ({
           fill
           priority
           src={backgroundImage}
-          alt='Fastruct factory'
+          alt='Fast Struct factory'
           className='object-cover object-center'
         />
         <div className='from-dark absolute inset-0 bg-linear-to-t to-transparent to-50%' />

@@ -18,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return generateSocialMetadata({
     title: 'Home | Fast Struct',
     description: content.heroSection.subtitle,
-    image: '/assets/hero-image.png',
+    image: '/assets/intro-image.jpg',
     url: '/',
   });
 }

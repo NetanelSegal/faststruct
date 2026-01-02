@@ -200,7 +200,7 @@ const ContactFormSection = ({ form, info }: ContactFormSectionProps) => {
                   loading='lazy'
                   referrerPolicy='no-referrer-when-downgrade'
                   className='h-full w-full'
-                  title='Fastruct Location'
+                  title='Fast Struct Location'
                 />
               </div>
             </div>
