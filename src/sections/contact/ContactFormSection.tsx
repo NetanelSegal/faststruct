@@ -19,6 +19,7 @@ const ContactFormSection = ({ form, info }: ContactFormSectionProps) => {
     name: '',
     email: '',
     phone: '',
+    address: '',
     message: '',
   });
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
@@ -87,7 +88,7 @@ const ContactFormSection = ({ form, info }: ContactFormSectionProps) => {
       });
 
       // Reset form
-      setFormData({ name: '', email: '', phone: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', address: '', message: '' });
       setFieldErrors({});
     } catch (error) {
       // Network error
@@ -297,6 +298,31 @@ const ContactFormSection = ({ form, info }: ContactFormSectionProps) => {
                   {fieldErrors.phone && (
                     <p className='mt-1 text-sm text-red-400'>
                       {fieldErrors.phone}
+                    </p>
+                  )}
+                </div>
+                <div>
+                  <label
+                    htmlFor='address'
+                    className='text-h6 text-light mb-2 block font-medium'>
+                    {form.fields.address.label}
+                  </label>
+                  <input
+                    type='text'
+                    id='address'
+                    name='address'
+                    autoComplete='street-address'
+                    value={formData.address}
+                    onChange={handleChange}
+                    required
+                    className={`border-accent/50 bg-light/10 text-light placeholder-accent/70 focus:border-accent focus:ring-accent/50 w-full rounded-lg border p-4 focus:ring-2 ${
+                      fieldErrors.address ? 'border-red-500/50' : ''
+                    }`}
+                    placeholder={form.fields.address.placeholder}
+                  />
+                  {fieldErrors.address && (
+                    <p className='mt-1 text-sm text-red-400'>
+                      {fieldErrors.address}
                     </p>
                   )}
                 </div>

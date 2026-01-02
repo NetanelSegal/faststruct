@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const { name, email, phone, message } = result.data;
+    const { name, email, phone, address, message } = result.data;
 
     const emailResult = await resend.emails.send({
       from: env.fromEmail,
@@ -41,6 +41,7 @@ export async function POST(request: NextRequest) {
         name,
         email,
         phone,
+        address,
         message,
       }),
       replyTo: email,
@@ -65,6 +66,7 @@ export async function POST(request: NextRequest) {
         name,
         email,
         phone,
+        address,
         message,
         status: 'Pending',
       });

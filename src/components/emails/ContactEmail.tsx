@@ -16,6 +16,7 @@ interface ContactEmailProps {
   name: string;
   email: string;
   phone: string;
+  address: string;
   message: string;
 }
 
@@ -23,6 +24,7 @@ export default function ContactEmail({
   name,
   email,
   phone,
+  address,
   message,
 }: ContactEmailProps) {
   return (
@@ -71,6 +73,11 @@ export default function ContactEmail({
                 {phone}
               </a>
             </Text>
+          </Section>
+
+          <Section style={section}>
+            <Text style={label}>Address:</Text>
+            <Text style={value}>{address}</Text>
           </Section>
 
           <Section style={section}>

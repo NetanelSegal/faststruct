@@ -19,6 +19,10 @@
         "label": "Phone",
         "placeholder": "(123) 456-7890"
       },
+      "address": {
+        "label": "Address",
+        "placeholder": "Your address"
+      },
       "message": {
         "label": "Message",
         "placeholder": "Tell us about your project..."
