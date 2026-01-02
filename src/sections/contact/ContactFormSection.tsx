@@ -235,6 +235,7 @@ const ContactFormSection = ({ form, info }: ContactFormSectionProps) => {
                     type='text'
                     id='name'
                     name='name'
+                    autoComplete='name'
                     value={formData.name}
                     onChange={handleChange}
                     required
@@ -259,6 +260,7 @@ const ContactFormSection = ({ form, info }: ContactFormSectionProps) => {
                     type='email'
                     id='email'
                     name='email'
+                    autoComplete='email'
                     value={formData.email}
                     onChange={handleChange}
                     required
@@ -283,6 +285,7 @@ const ContactFormSection = ({ form, info }: ContactFormSectionProps) => {
                     type='tel'
                     id='phone'
                     name='phone'
+                    autoComplete='tel'
                     value={formData.phone}
                     onChange={handleChange}
                     required
@@ -306,6 +309,7 @@ const ContactFormSection = ({ form, info }: ContactFormSectionProps) => {
                   <textarea
                     id='message'
                     name='message'
+                    autoComplete='off'
                     value={formData.message}
                     onChange={handleChange}
                     required
