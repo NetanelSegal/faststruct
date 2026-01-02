@@ -105,7 +105,7 @@ const ContactFormSection = ({ form, info }: ContactFormSectionProps) => {
       ref={sectionRef}
       bgColor='dark'
       textColor='light'
-      className='-my-5 md:-my-8 lg:-my-10'>
+      className='-my-16'>
       <div className='container mx-auto'>
         <div className='grid gap-12 md:grid-cols-2 md:gap-16'>
           {/* Left: Contact Information */}
