@@ -10,7 +10,7 @@ interface HeroContactSectionProps {
 
 const HeroContactSection = ({ hero }: HeroContactSectionProps) => {
   return (
-    <section className='bg-dark relative flex min-h-[60vh] items-center justify-center py-32'>
+    <section className='bg-dark relative flex min-h-[60vh] items-center justify-center pt-32'>
       <div className='container-padding mx-auto text-center'>
         <AnimatedHeading
           text={hero.title}
