@@ -88,6 +88,7 @@ export async function POST(request: NextRequest) {
         react: ContactConfirmationEmail({
           name,
         }),
+        replyTo: env.fromEmail,
       });
 
       if (confirmationResult.error) {
