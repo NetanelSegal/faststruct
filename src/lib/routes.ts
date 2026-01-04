@@ -7,7 +7,7 @@ export const ROUTES = [
   { href: '/the-system', title: 'The System' },
   {
     href: '/contact',
-    title: 'Call us',
+    title: 'Contact Us',
     isButton: true,
   },
 ];

@@ -12,6 +12,7 @@ export interface IContactFormFields {
   name: IContactFormField;
   email: IContactFormField;
   phone: IContactFormField;
+  address: IContactFormField;
   message: IContactFormField;
 }
 
@@ -37,7 +38,7 @@ export interface IContactInfo {
   address: IContactAddress;
   email: string;
   phone: IContactPhone;
-  license: string;
+  license: string[];
 }
 
 export interface ISocialLink {
@@ -56,4 +57,3 @@ export interface IContactContent {
   info: IContactInfo;
   social: IContactSocial;
 }
-

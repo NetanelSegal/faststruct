@@ -19,6 +19,10 @@
         "label": "Phone",
         "placeholder": "(123) 456-7890"
       },
+      "address": {
+        "label": "Address",
+        "placeholder": "Your address"
+      },
       "message": {
         "label": "Message",
         "placeholder": "Tell us about your project..."
@@ -37,7 +41,7 @@
       "display": "(408) 702-9012",
       "link": "+14087029012"
     },
-    "license": "CSLB #1147858 | CA HCD 1632336"
+    "license": ["CSLB #1147858", "CA HCD 1632336"]
   },
   "social": {
     "title": "Follow Us",

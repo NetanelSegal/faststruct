@@ -29,13 +29,13 @@ const ModulesContent = ({ modules, content }: ModulesContentProps) => {
 
   return (
     <>
-      <ModulesFilterSection
+      {/* <ModulesFilterSection
         content={content}
         filterState={filterState}
         onFilterChange={handleFilterChange}
         onClearAll={handleClearAll}
         activeFilterCount={activeFilterCount}
-      />
+      /> */}
       <ModulesGridSection
         modules={sortedModules}
         allModules={modules}

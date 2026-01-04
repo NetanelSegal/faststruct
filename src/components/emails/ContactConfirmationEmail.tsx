@@ -28,7 +28,7 @@ export default function ContactConfirmationEmail({
           <Section style={logoSection}>
             <Img
               src={`${env.siteUrl}/assets/logo/logo-full.png`}
-              alt='Fastruct Logo'
+              alt='Fast Struct Logo'
               width='200'
               height='auto'
               style={logo}

@@ -5,6 +5,7 @@ export const env = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
   enableComingSoon: process.env.ENABLE_COMING_SOON === 'true',
   googleSheetsUrl: process.env.GOOGLE_SHEETS_URL ?? '',
+  googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '',
 } as const;
 
 export type Env = typeof env;

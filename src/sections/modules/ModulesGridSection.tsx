@@ -29,7 +29,7 @@ const ModulesGridSection = ({
   );
 
   return (
-    <Section bgColor='dark' textColor='light' className='pt-4 md:pt-6 lg:pt-8'>
+    <Section bgColor='dark' textColor='light' className='-my-16'>
       <div className='flex flex-col gap-8'>
         {/* Results Count */}
         <div className='flex items-center justify-between'>

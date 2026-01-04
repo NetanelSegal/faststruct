@@ -24,8 +24,12 @@ const Footer = ({ contactInfo, contactSocial }: FooterProps) => {
           <FooterLinksAndContact info={contactInfo} social={contactSocial} />
         </div>
         <div className='border-cream/20 mt-12 border-t pt-8 text-center text-sm opacity-70'>
-          <p>© {new Date().getFullYear()} Fastruct. All rights reserved.</p>
-          <p className='mt-2'>{contactInfo.license}</p>
+          <p>© {new Date().getFullYear()} Fast Struct. All rights reserved.</p>
+          <div className='mt-2 flex flex-col gap-1'>
+            {contactInfo.license.map((license, index) => (
+              <p key={index}>{license}</p>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

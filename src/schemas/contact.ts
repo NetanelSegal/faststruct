@@ -19,6 +19,7 @@ export const contactFormSchema = z.object({
           'Invalid phone format. Please enter a valid phone number (7-15 digits)',
       }
     ),
+  address: z.string().min(5, 'Address must be at least 5 characters').trim(),
   message: z.string().min(10, 'Message must be at least 10 characters').trim(),
 });
 
