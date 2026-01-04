@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return generateSocialMetadata({
     title: 'Explore Our Modules | Fast Struct',
     description: content.hero.subtitle,
-    image: '/assets/hero-image.png',
+    image: '/assets/features-image-1.jpg',
     url: '/modules',
   });
 }
