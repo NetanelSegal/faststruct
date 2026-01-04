@@ -36,7 +36,7 @@ const TestimonialsSection: React.FC<ITestimonialsSectionProps> = ({
       <div className='relative z-10'>
         <TestimonialCarousel
           testimonials={testimonials}
-          autoPlayInterval={9000}
+          autoPlayInterval={8000}
         />
       </div>
     </motion.div>
