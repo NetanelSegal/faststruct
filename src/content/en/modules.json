@@ -22,7 +22,7 @@
       "/assets/modules-images/all-modules-in-5.jpg",
       "/assets/modules-images/all-modules-in-6.jpg"
     ],
-    "sketchPlans": ["/assets/modules-images/module-1/floor-plan-1.png"]
+    "sketchPlans": ["/assets/modules-images/module-1/floor-plan-1.jpg"]
   },
   {
     "slug": "family-smart-unit",
@@ -46,6 +46,6 @@
       "/assets/modules-images/all-modules-in-5.jpg",
       "/assets/modules-images/all-modules-in-6.jpg"
     ],
-    "sketchPlans": ["/assets/modules-images/module-2/floor-plan-2.png"]
+    "sketchPlans": ["/assets/modules-images/module-2/floor-plan-2.jpg"]
   }
 ]

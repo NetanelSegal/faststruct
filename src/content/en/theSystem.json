@@ -11,7 +11,7 @@
     "modular": {
       "title": "The Modular Route",
       "description": "Ideal for rapid deployment. We manufacture fully finished 3D volumes-including structure, electricity, and finishes-in our factory. They arrive on your site ready to connect",
-      "imageUrl": "/assets/system-modular.png",
+      "imageUrl": "/assets/system-modular.jpg",
       "bulletPoints": [
         "Instant delivery & quick turnaround",
         "Maximum noise reduction on-site",
@@ -21,7 +21,7 @@
     "panelized": {
       "title": "The Panelized Route",
       "description": "Ideal for design freedom. We manufacture precision-engineered 'Smart Walls' that pack flat and assemble rapidly on-site. This allows for wider spaces and access to difficult lots",
-      "imageUrl": "/assets/system-panelized.png",
+      "imageUrl": "/assets/system-panelized.jpg",
       "bulletPoints": [
         "Complex architectural designs & open layouts",
         "Sites with limited access (narrow roads/cranes)",
@@ -64,22 +64,22 @@
       {
         "title": "Spatial Flow",
         "description": "Adjust room sizes, wall placements, and layouts",
-        "imageUrl": "/assets/system-custom-top-view.png"
+        "imageUrl": "/assets/system-custom-top-view.jpg"
       },
       {
         "title": "The Envelope",
         "description": "Select roof styles, cladding textures, and window profiles",
-        "imageUrl": "/assets/system-custom-closeup.png"
+        "imageUrl": "/assets/system-custom-closeup.jpg"
       },
       {
         "title": "The Infrastructure",
         "description": "Tailored electrical and HVAC plans to suit your lifestyle",
-        "imageUrl": "/assets/system-custom-smart_home.png"
+        "imageUrl": "/assets/system-custom-smart_home.jpg"
       },
       {
         "title": "The Interior",
         "description": "Choose flooring, lighting, and finishes that reflect your taste",
-        "imageUrl": "/assets/system-custom-metirials.png"
+        "imageUrl": "/assets/system-custom-metirials.jpg"
       }
     ]
   }
