@@ -88,7 +88,7 @@ const ContactFormSection = ({ form, info }: ContactFormSectionProps) => {
 
       setFormData({ name: '', email: '', phone: '', address: '', message: '' });
       setFieldErrors({});
-    } catch (error) {
+    } catch {
       setSubmitMessage({
         type: 'error',
         text: 'Network error. Please try again.',
