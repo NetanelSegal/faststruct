@@ -6,8 +6,10 @@ import { RefObject } from 'react';
 
 const IntroSectionImage = ({
   parentRef,
+  imageUrl,
 }: {
   parentRef: RefObject<HTMLElement | null>;
+  imageUrl: string;
 }) => {
   return (
     <Parallax
@@ -18,7 +20,7 @@ const IntroSectionImage = ({
       offset={['start end', 'end start']}>
       <div className='relative h-96 w-full translate-x-10 scale-105 overflow-hidden rounded-lg lg:h-[70vh] lg:scale-110'>
         <Image
-          src='/assets/intro-image.jpg'
+          src={imageUrl}
           alt='Construction site'
           fill
           sizes='(max-width: 1024px) 100vw, 50vw'

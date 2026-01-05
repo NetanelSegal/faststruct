@@ -80,5 +80,6 @@
   "clearFilters": {
     "label": "Clear all filters",
     "ariaLabel": "Clear all active filters"
-  }
+  },
+  "metadataImage": "/assets/features-image-1.jpg"
 }

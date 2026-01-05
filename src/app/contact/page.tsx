@@ -5,13 +5,16 @@ import ContactFormSection from '@/sections/contact/ContactFormSection';
 import Page from '@/components/Page';
 import { generateSocialMetadata } from '@/lib/metadata';
 
-export const metadata: Metadata = generateSocialMetadata({
-  title: 'Contact Us | Fast Struct',
-  description:
-    'Get in touch with Fast Struct to start your modular and panelized construction project. We handle everything from consultation to completion.',
-  image: '/assets/hero-image.png',
-  url: '/contact',
-});
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getContent('contact', 'en');
+  return generateSocialMetadata({
+    title: 'Contact Us | Fast Struct',
+    description:
+      'Get in touch with Fast Struct to start your modular and panelized construction project. We handle everything from consultation to completion.',
+    image: content.metadataImage,
+    url: '/contact',
+  });
+}
 
 export default async function Contact() {
   const content = await getContent('contact', 'en');

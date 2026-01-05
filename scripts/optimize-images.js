@@ -120,7 +120,7 @@ async function optimizeImage(inputPath, outputPath) {
 }
 
 /**
- * Find and replace file references in code
+ * Find and replace file references in code and JSON files
  */
 async function updateCodeReferences(oldPath, newPath) {
     const oldFileName = path.basename(oldPath);
@@ -128,9 +128,13 @@ async function updateCodeReferences(oldPath, newPath) {
     const oldRelativePath = oldPath.replace(process.cwd(), '').replace(/\\/g, '/');
     const newRelativePath = newPath.replace(process.cwd(), '').replace(/\\/g, '/');
 
-    // Get relative paths from public/assets
+    // Get relative paths from public/assets (with leading slash)
     const oldPublicPath = oldRelativePath.replace('/public', '');
     const newPublicPath = newRelativePath.replace('/public', '');
+
+    // Also get paths without leading slash for JSON arrays
+    const oldPublicPathNoSlash = oldPublicPath.startsWith('/') ? oldPublicPath.slice(1) : oldPublicPath;
+    const newPublicPathNoSlash = newPublicPath.startsWith('/') ? newPublicPath.slice(1) : newPublicPath;
 
     const codeFiles = await getAllCodeFiles(SRC_DIR);
     let totalReplacements = 0;
@@ -143,23 +147,29 @@ async function updateCodeReferences(oldPath, newPath) {
 
             // Replace various possible reference formats
             const replacements = [
-                // Full public path: /assets/image.png
-                { old: oldPublicPath, new: newPublicPath },
-                // Just filename: image.png
-                { old: oldFileName, new: newFileName },
-                // With quotes: "image.png" or 'image.png'
-                { old: `"${oldFileName}"`, new: `"${newFileName}"` },
-                { old: `'${oldFileName}'`, new: `'${newFileName}'` },
-                // With path and quotes: "/assets/image.png"
+                // Full public path with quotes: "/assets/image.png" or '/assets/image.png'
                 { old: `"${oldPublicPath}"`, new: `"${newPublicPath}"` },
                 { old: `'${oldPublicPath}'`, new: `'${newPublicPath}'` },
+                // Full public path without quotes (for JSON arrays): /assets/image.png
+                { old: oldPublicPath, new: newPublicPath },
+                // Path without leading slash (for some JSON formats): "assets/image.png"
+                { old: `"${oldPublicPathNoSlash}"`, new: `"${newPublicPathNoSlash}"` },
+                { old: `'${oldPublicPathNoSlash}'`, new: `'${newPublicPathNoSlash}'` },
+                // Just filename with quotes: "image.png" or 'image.png'
+                { old: `"${oldFileName}"`, new: `"${newFileName}"` },
+                { old: `'${oldFileName}'`, new: `'${newFileName}'` },
+                // Just filename without quotes: image.png
+                { old: oldFileName, new: newFileName },
             ];
 
             for (const { old, new: newVal } of replacements) {
-                if (content.includes(old)) {
-                    content = content.replace(new RegExp(old.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), newVal);
+                // Use global regex to replace all occurrences
+                const regex = new RegExp(old.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+                const matches = content.match(regex);
+                if (matches && matches.length > 0) {
+                    content = content.replace(regex, newVal);
                     modified = true;
-                    fileReplacements++;
+                    fileReplacements += matches.length;
                 }
             }
 
@@ -231,8 +241,10 @@ async function optimizeImages() {
 
             // Update code references only if filename changed
             if (!isOverwrite) {
-                console.log(`  🔍 Searching for references in code...`);
+                console.log(`  🔍 Searching for references in code and JSON files...`);
                 await updateCodeReferences(imagePath, newPath);
+            } else {
+                console.log(`  ℹ️  Skipping code updates (filename unchanged)`);
             }
 
             // Delete old file only if it's different from new file
