@@ -25,6 +25,7 @@ const TestimonialsSection: React.FC<ITestimonialsSectionProps> = ({
           src='/assets/modules-images/main-image1.jpg'
           alt='Testimonials background'
           fill
+          sizes='100vw'
           className='object-cover object-center'
           priority={false}
         />

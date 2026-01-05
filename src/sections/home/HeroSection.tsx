@@ -42,6 +42,7 @@ const HeroSection: React.FC<IHeroSection> = ({
         <Image
           priority
           fill
+          sizes='100vw'
           src='/assets/hero-image.png'
           alt='Modern modular home'
           className='object-cover object-[50%_10px] md:object-[50%_20px]'

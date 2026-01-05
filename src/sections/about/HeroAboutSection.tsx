@@ -28,6 +28,7 @@ const HeroAboutSection = ({ title, subtitle, backgroundImage }: IHeroAbout) => {
           priority
           src={backgroundImage}
           alt='About us'
+          sizes='100vw'
           className='object-cover object-center'
         />
         <div className='from-dark absolute inset-0 bg-linear-to-t to-transparent to-50%' />
