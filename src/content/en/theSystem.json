@@ -2,8 +2,8 @@
   "hero": {
     "title": "Build Smarter. Live Better",
     "subtitle": "We've decoded the construction process in California. By moving production off-site and into the lab, Fast Struct delivers precision-engineered modular and panelized homes without the chaos of traditional building",
-    "backgroundImageDesktop": "/assets/system-hero-image.png",
-    "backgroundImageMobile": "/assets/system-hero-image-mobile.png"
+    "backgroundImageDesktop": "/assets/system-hero-image.jpg",
+    "backgroundImageMobile": "/assets/system-hero-image-mobile.jpg"
   },
   "twoPaths": {
     "title": "Two Paths. One Standard of Excellence",
