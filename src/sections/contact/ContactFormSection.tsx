@@ -103,7 +103,7 @@ const ContactFormSection = ({ form, info }: ContactFormSectionProps) => {
       ref={sectionRef}
       bgColor='dark'
       textColor='light'
-      className='-my-16'>
+      className='-my-10'>
       <div className='container mx-auto'>
         <div className='grid gap-12 md:grid-cols-2 md:gap-16'>
           <ContactInfoSection form={form} info={info} isInView={isFormInView} />

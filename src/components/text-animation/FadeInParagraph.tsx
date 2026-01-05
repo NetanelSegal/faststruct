@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'motion/react';
+import { useScreenWidth } from '@/hooks/useScreenWidth';
 
 interface FadeInParagraphProps {
   children?: React.ReactNode;

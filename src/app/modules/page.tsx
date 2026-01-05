@@ -24,16 +24,7 @@ const ModulesPage = async () => {
   return (
     <Page className='bg-dark text-cream'>
       <HeroModulesSection hero={content.hero} />
-      <Suspense
-        fallback={
-          <div className='section-padding bg-dark'>
-            <div className='bg-dark/40 mb-6 h-12 w-full max-w-md animate-pulse rounded-lg'></div>
-            <div className='bg-dark/40 h-32 w-full animate-pulse rounded-lg'></div>
-            <LoadingSkeleton />
-          </div>
-        }>
-        <ModulesContent modules={modulesData} content={content} />
-      </Suspense>
+      <ModulesContent modules={modulesData} content={content} />
     </Page>
   );
 };
