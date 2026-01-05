@@ -15,6 +15,7 @@ const ConstructionRouteCard = ({ route }: ConstructionRouteCardProps) => {
           src={route.imageUrl}
           alt={route.title}
           fill
+          sizes='(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw'
           className='scale-125 object-cover object-center'
         />
       </div>

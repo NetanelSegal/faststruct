@@ -21,7 +21,7 @@ const IntroSectionImage = ({
           src='/assets/intro-image.jpg'
           alt='Construction site'
           fill
-          sizes='50vw'
+          sizes='(max-width: 1024px) 100vw, 50vw'
           className='object-cover object-center'
           priority
         />

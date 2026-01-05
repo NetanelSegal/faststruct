@@ -67,7 +67,9 @@ export const ModuleCard = ({
                 fill
                 src={imageUrl}
                 alt={title}
+                sizes='(max-width: 768px) 100vw, 50vw'
                 className='object-cover object-center'
+                loading='lazy'
               />
             </motion.div>
           </div>

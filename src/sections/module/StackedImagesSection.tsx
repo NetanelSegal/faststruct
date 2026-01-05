@@ -113,8 +113,9 @@ const StackedImage = ({
           src={image.url}
           alt={image.alt || `Product image ${index + 1}`}
           fill
-          sizes='(max-width: 768px) 100vw, 90vw'
+          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1152px'
           className='object-cover object-center'
+          loading={index === 0 ? 'eager' : 'lazy'}
         />
       </div>
     </motion.div>

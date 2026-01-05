@@ -52,6 +52,7 @@ const WhyModularPanelizedSection: React.FC<IWhyModularPanelized> = ({
                 'Why Modular & Panelized Construction image'
               }
               fill
+              sizes='100vw'
               className='object-contain'
             />
           </motion.div>
