@@ -18,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return generateSocialMetadata({
     title: 'Home | Fast Struct',
     description: content.heroSection.subtitle,
-    image: '/assets/intro-image.jpg',
+    image: content.metadataImage,
     url: '/',
   });
 }
@@ -55,7 +55,10 @@ const HomePage = async () => {
       <OurProcessSection {...processContent} />
 
       {/* Testimonial Section */}
-      <TestimonialsSection testimonials={content.testimonials} />
+      <TestimonialsSection
+        testimonials={content.testimonials}
+        backgroundImage={content.testimonialsBackgroundImage}
+      />
 
       {/* FAQ Section */}
       <FAQSection {...content.faq} />

@@ -7,7 +7,7 @@ import FadeInParagraph from '@/components/text-animation/FadeInParagraph';
 import { IIntro } from '@/types/home';
 import { useRef } from 'react';
 
-const IntroSection: React.FC<IIntro> = ({ text }) => {
+const IntroSection: React.FC<IIntro> = ({ text, introImage }) => {
   const sectionRef = useRef<HTMLElement | null>(null);
 
   return (
@@ -17,7 +17,7 @@ const IntroSection: React.FC<IIntro> = ({ text }) => {
       textColor='light'
       className='relative z-10 overflow-x-clip'>
       <div className='relative flex flex-col items-center justify-between gap-8 lg:flex-row-reverse'>
-        <IntroSectionImage parentRef={sectionRef} />
+        <IntroSectionImage parentRef={sectionRef} imageUrl={introImage} />
         <div className='z-10 flex basis-2/3 flex-col gap-4 overflow-y-clip'>
           <AnimatedHeading
             text='More Than Just Construction'

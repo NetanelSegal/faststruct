@@ -20,7 +20,7 @@ const ModulesFilterSection = ({
   activeFilterCount,
 }: ModulesFilterSectionProps) => {
   return (
-    <section className='bg-dark container-padding text-light pt-8 pb-0 md:pt-12 lg:pt-16'>
+    <section className='bg-dark container-padding text-light pb-0'>
       <div className='flex flex-col gap-4'>
         {/* Search Input */}
         <div className='flex-1 lg:max-w-md'>

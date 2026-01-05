@@ -1,6 +1,6 @@
 'use client';
-import { ReactNode, useEffect, useLayoutEffect, useState } from 'react';
-import { animate, AnimatePresence, motion, useMotionValue } from 'motion/react';
+import { ReactNode, useEffect } from 'react';
+import { AnimatePresence, motion } from 'motion/react';
 import { usePathname } from 'next/navigation';
 import { useAppNavigation } from '@/contexts/AppNavigationProvider';
 interface IPageProps {

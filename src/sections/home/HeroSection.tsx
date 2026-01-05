@@ -13,6 +13,7 @@ const HeroSection: React.FC<IHeroSection> = ({
   title,
   animatedWords,
   subtitle,
+  heroImage,
 }) => {
   const isMobile = useIsMobile();
   const ref = useRef<HTMLDivElement>(null);
@@ -43,7 +44,7 @@ const HeroSection: React.FC<IHeroSection> = ({
           priority
           fill
           sizes='100vw'
-          src='/assets/hero-image.png'
+          src={heroImage}
           alt='Modern modular home'
           className='object-cover object-[50%_10px] md:object-[50%_20px]'
         />

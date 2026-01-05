@@ -7,10 +7,12 @@ import Image from 'next/image';
 
 interface ITestimonialsSectionProps {
   testimonials: ITestimonial[];
+  backgroundImage: string;
 }
 
 const TestimonialsSection: React.FC<ITestimonialsSectionProps> = ({
   testimonials,
+  backgroundImage,
 }) => {
   return (
     <motion.div
@@ -22,7 +24,7 @@ const TestimonialsSection: React.FC<ITestimonialsSectionProps> = ({
       {/* Background Image */}
       <div className='absolute inset-0 z-0'>
         <Image
-          src='/assets/modules-images/main-image1.jpg'
+          src={backgroundImage}
           alt='Testimonials background'
           fill
           sizes='100vw'

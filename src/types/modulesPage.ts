@@ -65,6 +65,7 @@ export interface IModulesPageContent {
   search: ISearch;
   results: IResults;
   clearFilters: IClearFilters;
+  metadataImage: string;
 }
 
 export interface IFilterState {
@@ -81,4 +82,3 @@ export type SortOption =
   | 'size-desc'
   | 'bedrooms-asc'
   | 'bedrooms-desc';
-

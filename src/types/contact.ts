@@ -56,4 +56,5 @@ export interface IContactContent {
   form: IContactForm;
   info: IContactInfo;
   social: IContactSocial;
+  metadataImage: string;
 }

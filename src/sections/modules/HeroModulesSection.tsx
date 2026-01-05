@@ -9,8 +9,8 @@ interface HeroModulesSectionProps {
 
 const HeroModulesSection = ({ hero }: HeroModulesSectionProps) => {
   return (
-    <Section bgColor='dark' textColor='light'>
-      <div className='container-padding flex flex-col gap-8 text-center'>
+    <Section bgColor='dark' textColor='light' className='-mb-8'>
+      <div className='container-padding flex flex-col text-center'>
         <AnimatedHeading
           text={hero.title}
           className='text-h1 font-bebas text-light'

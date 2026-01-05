@@ -2,10 +2,12 @@ export interface IHeroSection {
   title: string;
   animatedWords: string[];
   subtitle: string;
+  heroImage: string;
 }
 
 export interface IIntro {
   text: string;
+  introImage: string;
 }
 
 export interface IFeatureItem {
@@ -47,6 +49,11 @@ export interface ITestimonial {
   author: string;
 }
 
+export interface ITestimonialsSection {
+  testimonials: ITestimonial[];
+  backgroundImage?: string;
+}
+
 export interface ICTA {
   title: string;
   subtitle: string;
@@ -61,4 +68,6 @@ export interface IHomeContent {
   faq: IFAQ;
   cta: ICTA;
   testimonials: ITestimonial[];
+  testimonialsBackgroundImage: string;
+  metadataImage: string;
 }
