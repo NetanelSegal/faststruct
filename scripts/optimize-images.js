@@ -6,11 +6,9 @@ const sharp = require('sharp');
 
 // Configuration
 const ASSETS_DIR = path.join(process.cwd(), 'public', 'assets');
-const SRC_DIR = path.join(process.cwd(), 'src');
 const MAX_WIDTH = 2560;
 const JPEG_QUALITY = 90;
 const FILE_EXTENSIONS = ['.png', '.jpg', '.jpeg', '.webp'];
-const CODE_EXTENSIONS = ['.tsx', '.ts', '.css', '.json'];
 
 // Statistics
 const stats = {
@@ -19,7 +17,6 @@ const stats = {
     resized: 0,
     skipped: 0,
     errors: 0,
-    codeUpdates: 0,
     filesDeleted: 0,
     totalSizeBefore: 0,
     totalSizeAfter: 0,
@@ -38,29 +35,6 @@ async function getAllImageFiles(dir, fileList = []) {
         if (file.isDirectory()) {
             await getAllImageFiles(filePath, fileList);
         } else if (FILE_EXTENSIONS.includes(ext)) {
-            fileList.push(filePath);
-        }
-    }
-
-    return fileList;
-}
-
-/**
- * Get all code files recursively
- */
-async function getAllCodeFiles(dir, fileList = []) {
-    const files = await fs.readdir(dir, { withFileTypes: true });
-
-    for (const file of files) {
-        const filePath = path.join(dir, file.name);
-        const ext = path.extname(file.name).toLowerCase();
-
-        if (file.isDirectory()) {
-            // Skip node_modules and .next
-            if (!file.name.startsWith('.') && file.name !== 'node_modules') {
-                await getAllCodeFiles(filePath, fileList);
-            }
-        } else if (CODE_EXTENSIONS.includes(ext)) {
             fileList.push(filePath);
         }
     }
@@ -120,78 +94,6 @@ async function optimizeImage(inputPath, outputPath) {
 }
 
 /**
- * Find and replace file references in code and JSON files
- */
-async function updateCodeReferences(oldPath, newPath) {
-    const oldFileName = path.basename(oldPath);
-    const newFileName = path.basename(newPath);
-    const oldRelativePath = oldPath.replace(process.cwd(), '').replace(/\\/g, '/');
-    const newRelativePath = newPath.replace(process.cwd(), '').replace(/\\/g, '/');
-
-    // Get relative paths from public/assets (with leading slash)
-    const oldPublicPath = oldRelativePath.replace('/public', '');
-    const newPublicPath = newRelativePath.replace('/public', '');
-
-    // Also get paths without leading slash for JSON arrays
-    const oldPublicPathNoSlash = oldPublicPath.startsWith('/') ? oldPublicPath.slice(1) : oldPublicPath;
-    const newPublicPathNoSlash = newPublicPath.startsWith('/') ? newPublicPath.slice(1) : newPublicPath;
-
-    const codeFiles = await getAllCodeFiles(SRC_DIR);
-    let totalReplacements = 0;
-
-    for (const codeFile of codeFiles) {
-        try {
-            let content = await fs.readFile(codeFile, 'utf8');
-            let modified = false;
-            let fileReplacements = 0;
-
-            // Replace various possible reference formats
-            const replacements = [
-                // Full public path with quotes: "/assets/image.png" or '/assets/image.png'
-                { old: `"${oldPublicPath}"`, new: `"${newPublicPath}"` },
-                { old: `'${oldPublicPath}'`, new: `'${newPublicPath}'` },
-                // Full public path without quotes (for JSON arrays): /assets/image.png
-                { old: oldPublicPath, new: newPublicPath },
-                // Path without leading slash (for some JSON formats): "assets/image.png"
-                { old: `"${oldPublicPathNoSlash}"`, new: `"${newPublicPathNoSlash}"` },
-                { old: `'${oldPublicPathNoSlash}'`, new: `'${newPublicPathNoSlash}'` },
-                // Just filename with quotes: "image.png" or 'image.png'
-                { old: `"${oldFileName}"`, new: `"${newFileName}"` },
-                { old: `'${oldFileName}'`, new: `'${newFileName}'` },
-                // Just filename without quotes: image.png
-                { old: oldFileName, new: newFileName },
-            ];
-
-            for (const { old, new: newVal } of replacements) {
-                // Use global regex to replace all occurrences
-                const regex = new RegExp(old.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
-                const matches = content.match(regex);
-                if (matches && matches.length > 0) {
-                    content = content.replace(regex, newVal);
-                    modified = true;
-                    fileReplacements += matches.length;
-                }
-            }
-
-            if (modified) {
-                await fs.writeFile(codeFile, content, 'utf8');
-                totalReplacements += fileReplacements;
-                console.log(`  📝 Updated: ${codeFile.replace(process.cwd(), '')} (${fileReplacements} replacements)`);
-            }
-        } catch (error) {
-            console.error(`  ⚠️  Error updating ${codeFile}:`, error.message);
-        }
-    }
-
-    if (totalReplacements > 0) {
-        stats.codeUpdates += totalReplacements;
-        console.log(`  ✅ Total code replacements: ${totalReplacements}`);
-    }
-
-    return totalReplacements;
-}
-
-/**
  * Main optimization function
  */
 async function optimizeImages() {
@@ -239,14 +141,6 @@ async function optimizeImages() {
                 stats.converted++;
             }
 
-            // Update code references only if filename changed
-            if (!isOverwrite) {
-                console.log(`  🔍 Searching for references in code and JSON files...`);
-                await updateCodeReferences(imagePath, newPath);
-            } else {
-                console.log(`  ℹ️  Skipping code updates (filename unchanged)`);
-            }
-
             // Delete old file only if it's different from new file
             if (!isOverwrite) {
                 try {
@@ -268,7 +162,6 @@ async function optimizeImages() {
     console.log(`🔄 Converted: ${stats.converted}`);
     console.log(`📏 Resized: ${stats.resized}`);
     console.log(`⏭️  Skipped: ${stats.skipped}`);
-    console.log(`📝 Code updates: ${stats.codeUpdates}`);
     console.log(`🗑️  Files deleted: ${stats.filesDeleted}`);
     console.log(`❌ Errors: ${stats.errors}`);
     console.log(`\n💾 Size reduction:`);
