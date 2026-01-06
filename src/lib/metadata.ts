@@ -70,9 +70,6 @@ export function generateSocialMetadata({
   return {
     title,
     description,
-    icons: {
-      icon: '/favicon.ico',
-    },
     openGraph: generateOpenGraphMetadata({ title, description, image, url }),
     twitter: generateTwitterMetadata({ title, description, image }),
   };

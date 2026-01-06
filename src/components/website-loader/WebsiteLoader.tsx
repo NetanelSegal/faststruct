@@ -34,10 +34,10 @@ const WebsiteLoader = ({ children }: IWebsiteLoaderProps) => {
 
   const loaderVariants: Variants = {
     hidden: {
-      y: '-120vh',
+      y: '-120%',
     },
     visible: {
-      y: '0vh',
+      y: '0%',
     },
   };
 
@@ -54,14 +54,25 @@ const WebsiteLoader = ({ children }: IWebsiteLoaderProps) => {
               duration: FRAME_ANIMATION_DURATION,
               ease: [0.68, -0.2, 0.32, 1.2],
             }}
-            className='bg-dark fixed top-[-10vh] z-50 flex h-[120vh] w-full items-center justify-center'>
+            className='bg-dark fixed z-50 flex w-full items-center justify-center'
+            style={{
+              top: '-10%',
+              height: '120dvh',
+              minHeight: '120vh',
+            }}>
             <LogoStrokeFillAnimated
               delay={FRAME_ANIMATION_DURATION - LOGO_ANIMATION_DURATION * 0.25}
               duration={LOGO_ANIMATION_DURATION}
               color='light'
             />
           </motion.div>
-          <div className='bg-dark fixed h-[120vh] w-full'></div>
+          <div
+            className='bg-dark fixed z-40 w-full'
+            style={{
+              height: '120dvh',
+              minHeight: '120vh',
+            }}
+          />
         </Fragment>
       )}
       <Fragment key='website-content'>{children}</Fragment>
